@@ -20,7 +20,7 @@ This section provides an overview of the design of the FHIR data representations
 
 #### Secondary prophylaxis medication planning and encounter recording
 
-<div width="100%">
+<div width="90%">
 <!-- Generated from `input/images-source/obj-FHIR-medication-planandrecord.plantuml` -->
 {% include obj-FHIR-medication-planandrecord.svg %}
 </div>
@@ -31,5 +31,21 @@ This section provides an overview of the design of the FHIR data representations
 <div width="70%">
 <!-- Generated from `input/images-source/state-FHIR-rheumaticfever-SPrecordinglifecycles.plantuml` -->
 {% include state-FHIR-rheumaticfever-SPrecordinglifecycles.svg %}
+</div>
+<br clear="all">
+
+#### Other care planning and encounter recording
+
+<div width="100%">
+<!-- Generated from `input/images-source/obj-FHIR-otherencounters-planandrecord.plantuml` -->
+{% include obj-FHIR-otherencounters-planandrecord.svg %}
+</div>
+<br clear="all">
+
+#### Enhanced diagnosis representation
+
+<div width="100%">
+<!-- Generated from `input/images-source/obj-FHIR-data-diagnosis.plantuml` -->
+{% include obj-FHIR-data-diagnosis.svg %}
 </div>
 <br clear="all">

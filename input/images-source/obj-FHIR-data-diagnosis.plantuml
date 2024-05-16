@@ -35,7 +35,7 @@ footer "Health NZ/Te Whatu Ora.  Generated from PlantUML source on %date('dd/MM/
 !endprocedure
 
 ' ******** ******** ******** ******** ******** ******** ******** ******** 
-title "Secondary prophylaxis medication planning and recording"
+title "Diagnosis representation"
 
 package "Condition and diagnosis instances linked from RF CarePlan" as Activities #Snow { 
   

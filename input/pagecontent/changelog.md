@@ -2,15 +2,19 @@
 
 ## v0.4.0 Rheumatic Fever phase 2 part 1 (May 2024)
 
+### [Data model designs](rheumatic-fever-data-models.html)
+
+- Revised **secondary prophylaxis medication planning and recording** model: Added nested lignocaine medication request and statement; simplified appointments.
+
+- Added new model of **diagnosis data representation**
+
+- Added new model for **planning/recording of other care appointments**
+
 ### [Definition instances](artifacts.html#rheumatic-fever-definitions)
 
 - Moved the [**LeadProvidersGroup**](CareTeam-LeadProvidersGroup.html) from Examples to Definitions section
 
 - Expanded the membership of the [**LeadProvidersGroup**](CareTeam-LeadProvidersGroup.html) to encompass all 18 NZ Rheumatic Fever Secondary Prevention Services.
-
-### [Data models](rheumatic-fever-data-models.html)
-
-- Revised medication planning and recording model: Added nested lignocaine medication request and statement; simplified appointments.
 
 ### Examples
 
@@ -21,6 +25,10 @@
 
 - In [consent-based access control](consentBasedAccessControl.html) added example instance data model showing patient opt-out of data sharing
 - Consistency and readability improvements to existing Consent example instance models
+
+### Terminology
+
+- Added an RFCCS Observation object identifier to the codesystem for external system identifier types
 
 ---
 
