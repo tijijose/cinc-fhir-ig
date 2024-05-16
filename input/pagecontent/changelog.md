@@ -15,13 +15,12 @@
 ### Examples
 
 - Added new example of Observation resource illustrating [Jones Criteria](Observation-JonesCriteriaObservationExample.html) components
-- Corrected examples having shared care provider references to **Taranaki Rheumatic Fever Secondary Prevention Service** to use the current HPI org ID (**G0M744-C**) 
+- Corrected examples having shared care provider references to **Taranaki Rheumatic Fever Secondary Prevention Service** to use the current HPI org ID (**G0M744-C**)
 
 ### Consent (2024-05-07)
 
 - In [consent-based access control](consentBasedAccessControl.html) added example instance data model showing patient opt-out of data sharing
 - Consistency and readability improvements to existing Consent example instance models
-
 
 ---
 
@@ -36,7 +35,8 @@ Fixed Capability Statement broken links.
 Updated [AntiviralEligibilityQuestionnaire](Questionnaire-AntiViralEligibilityQuestionnaire.html) to version 1.0.1
   
 - The `answerValueSet` canonical Url in question 3 (link Id "criteria") has been corrected to have the hyphen `-` in 'COVID-19'
-- Corresponding `QuestionnaireResponse` examples [yes](QuestionnaireResponse-AntiviralEligibilityYesQuestionnaireResponse.html),[no](QuestionnaireResponse-AntiviralEligibilityNoQuestionnaireResponse.html) 
+
+- Corresponding `QuestionnaireResponse` examples [yes](QuestionnaireResponse-AntiviralEligibilityYesQuestionnaireResponse.html),[no](QuestionnaireResponse-AntiviralEligibilityNoQuestionnaireResponse.html)
    changed to use the *NZHTS* rather than *standards.digital.health.nz* form of canonical Url for the defined terminology ValueSets
 
 ## v0.3.9 (2024-02-29)
@@ -49,14 +49,13 @@ Updated [AntiviralEligibilityQuestionnaire](Questionnaire-AntiViralEligibilityQu
 
 - Developer guidance expanded about validation of [resources using versioned profiles](developerGuide.html#fhir-profile-versioning)
 
-
 ## v0.3.8 (2024-02-02)
 
 ### RF examples
 
 - The example showing [consent by a related person](Consent-ConsentByRelatedPersonExample.html) is now an `#active` rather than `#proposed` consent, to make it more realistic.
 
-### Documentation
+### Doc
 
 - In [consent-based access control](consentBasedAccessControl.html), a diagram and description has been added for the Consent-on-behalf scenario (consent obtained from a related person).  Other minor improvements to the description.
 
@@ -135,7 +134,7 @@ A warning message about this is now displayed in the [IG home page](https://http
 
 One further type code has been added to the [ExternalSystemIdentifierTypeValueSet](ValueSet-external-system-identifier-type-code.html) ValueSet to enable clients to designate identifiers to external encounter objects.
 
-### Documentation
+### Misc
 
 In the rheumatic fever section of the documentation, the FHIR design diagrams (which were moved onto their own page in IG v0.3.5) are no longer duplicated on the rheumatic fever *data mappings and translation* page.
 
@@ -160,7 +159,7 @@ As a result of a design decision to constrain values of medication frequency to 
 1. An new **extension** has been introduced on MedicationRequest to capture a code from the ValueSet in (1). (The general purpose element `Dosage.additionalInstruction` is no longer to be used for medication frequency).
 1. A new profile for `MedicationRequest` named **RheumaticFeverMedicationRequest** has been introduced to incorporate the new extension from (2).  It builds on NzMedicationRequest from the NZ Base IG.
 
-#### Examples
+#### Example instances
 
 - The example `MedicationRequest` now claims conformance with its new profile in this IG as outlined above.
 
