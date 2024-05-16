@@ -142,6 +142,9 @@ $Coding(JONESCODING,"Jones criteria SNOMED","#11211002","Migratory polyarthritis
 $Coding(JONESCODING,"Jones criteria SNOMED","#165468009","Erythrocyte sedimentation rate ..")
 $Coding(JONESCODING,"Jones criteria SNOMED","#..\t\t\t","Other Jones criteria..")
 
+$Coding(SEVCODING,"RHD severity SNOMED","#..\t\t\t","TBC")
+$Coding(STREPCODING,"Strep diagnosis SNOMED","#..\t\t\t","TBC")
+
 ' positioning
 
 ' connectors
@@ -155,9 +158,15 @@ RFCOND "stage.assessment[2]" -d-> OBS3
 RFCOND "\n\n\n<color:MediumPurple><size:14>.serviceType" -[#MediumPurple,dotted]u-> EncContext
 
 OBS1 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> JONESCODING
+OBS2 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> SEVCODING
+OBS3 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> STREPCODING
 
 legend bottom
   This model shows how a rheumatic fever patient's condition and diagnosis are represented in FHIR.
+
+  Note that as FHIR ""Observation"" instances MUST have a code, the IG defines a local CodeSystem 
+  containing NZ-specific codes for the different **categories** of rheumatic fever diagnosis 
+  in NZ secondary prevention.
   
   **Notes** 
   1) Arrows indicate direction of FHIR reference
