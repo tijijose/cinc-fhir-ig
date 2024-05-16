@@ -87,8 +87,8 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
   '   +**interpreterRequired**: boolean
   ' }
 
-  object "diagnostic detail\n**:OBSERVATION**" as OBS1 <<FHIR R4B>> #DarkSeaGreen {
-    Jones Criteria
+  object "<size:18>Jones Criteria\n**:OBSERVATION**" as OBS1 <<FHIR R4B>> #DarkSeaGreen {
+    *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
@@ -100,8 +100,8 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     \t+interpretation: code
   }
 
-  object "diagnostic detail\n**:OBSERVATION**" as OBS2 <<FHIR R4B>> #DarkSeaGreen {
-    RHD severity assessment
+  object "<size:18>RHD severity assessment\n**:OBSERVATION**" as OBS2 <<FHIR R4B>> #DarkSeaGreen {
+    *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
@@ -113,8 +113,8 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     \t+interpretation: code
   }
 
-  object "diagnostic detail\n**:OBSERVATION**" as OBS3 <<FHIR R4B>> #DarkSeaGreen {
-    Strep evidence
+  object "<size:18>Strep evidence\n**:OBSERVATION**" as OBS3 <<FHIR R4B>> #DarkSeaGreen {
+    *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime

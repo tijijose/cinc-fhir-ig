@@ -79,7 +79,7 @@ package "Activity resources in the CarePlan" as Activities #Snow {
   }
 
   object "August 2023 (latest) appointment\n:**APPOINTMENT**" as AUGUST_APPT #Red {
-    *identifier: type #CarePlanActivityId (SF)
+    *identifier: type #salesforce-careplanactivity-id (RFCCS)
     ---
     * status: ""**#fulfilled**""
     * start: ""2023-08-08""
@@ -88,7 +88,7 @@ package "Activity resources in the CarePlan" as Activities #Snow {
   }
   
   object "next appointment (planned encounter)\n:**APPOINTMENT**" as FUTURE_APPT #Red {
-    *identifier[case] (usual): case Id (salesforce)
+    *identifier: type #salesforce-careplanactivity-id (RFCCS)
     ---
     * status: ""**#booked**""
     * start: ""2023-09-05""
@@ -104,6 +104,8 @@ package "Activity resources in the CarePlan" as Activities #Snow {
 
 
 object "August 2023 encounter\n:**ENCOUNTER**" as EInj1 #yellow {
+  *identifier: type #salesforce-clinicalencounter-id (RFCCS)
+  ---
   * status: //**#finished**//
   * period: 2023-08-08
   * participant: Ref(Practitioner)

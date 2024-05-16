@@ -14,5 +14,5 @@ Description:  "Identifier type codes for differentiating types of external ident
 * #salesforce-careteam-id "Identifies a CareTeam object in Te Whatu Ora's national RF Care Coordination System"
 * #salesforce-serviceappointment-id "Identifies a patient appointment object in Te Whatu Ora's national RF Care Coordination System"
 * #salesforce-clinicalencounter-id "Identifies a secondary prophylaxis appointment encounter object in Te Whatu Ora's national RF Care Coordination System"
-
+* #salesforce-observation-id "Identifies an observation object in Te Whatu Ora's national RF Care Coordination System"
 * #episurv-number "Identifies a notifiable disease surveillance case number in ESR's EpiSurv system"
