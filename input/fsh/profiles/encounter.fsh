@@ -14,7 +14,7 @@ Description: "Encounter FHIR resource for Manaaki Nga Tahi"
 // * appointment 0..0     // v0.3.0 re-enabled for rheumatic fever
 * basedOn 0..0
 * classHistory 0..0
-* contained 0..0
+// * contained 0..0       // v0.4.0 re-enabled for rheumatic fever
 * diagnosis.extension 0..0
 * diagnosis.id 0..0
 * diagnosis.modifierExtension 0..0

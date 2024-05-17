@@ -16,10 +16,21 @@
 
 - Expanded the membership of the [**LeadProvidersGroup**](CareTeam-LeadProvidersGroup.html) to encompass all 18 NZ Rheumatic Fever Secondary Prevention Services.
 
+### Profiles
+
+[Condition](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html) RF profile:
+
+- two new extensions for RF-specific diagnosis attributes
+
+1. Date of RHD severity assessment (Condition.**assessmentDate**)
+1. Symptom status at time of RF diagnosis (Condition.**symptomStatusAtDiagnosis**)
+
 ### Examples
 
+- Expanded [RfCondition](Condition-SevereRfConditionExample.html) example to use a new extension (symptomStatusAtDiagnosis) and reference a diagnosis Encounter (see below)
 - Added new example of Observation resource illustrating [Jones Criteria](Observation-JonesCriteriaObservationExample.html) components
 - Corrected examples having shared care provider references to **Taranaki Rheumatic Fever Secondary Prevention Service** to use the current HPI org ID (**G0M744-C**)
+- Added a new example [Diagnosis Encounter](Encounter-Encounter-Diagnosis.html) capturing representing context and locations of RF diagnosis.
 
 ### Consent (2024-05-07)
 
@@ -118,7 +129,7 @@ Corresponding example instances of these profiled types now use a versioned FHIR
 A couple of example instances now claim their resource profile as the profile (version "1.0.0") *in this IG* whereas previously they claimed the base FHIR R4B profile:
 
 - *SecondaryProphylaxisCareTeam* (`RheumaticFeverCareTeam`)
-- *PlannedMedicationRequestExample* (`RheumaticFeverMedicationRequest`)
+- *PlannedBenzathineMedication* (`RheumaticFeverMedicationRequest`)
 
 ---
 

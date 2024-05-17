@@ -1,4 +1,4 @@
-Instance: PlannedMedicationRequestExample
+Instance: PlannedBenzathineMedication
 InstanceOf: RheumaticFeverMedicationRequest
 Description: "Illustrates a request for active secondary prophylaxis medication that can appear in a rheumatic fever care plan"
 Usage: #example
@@ -13,7 +13,7 @@ Usage: #example
 
 * intent = #plan
 
-* medicationReference = Reference(SecondaryProphylaxisMedicationExample)
+* medicationReference = Reference(BenzathineMedication)
 
 * performer insert ReferencePractitioner(99ZAAA,[[Isabel Injecta]])
 

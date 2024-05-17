@@ -1,4 +1,4 @@
-Instance: SecondaryProphylaxisMedicationExample
+Instance: BenzathineMedication
 InstanceOf: Medication
 Description: "Example of medication used in rheumatic fever secondary prophylaxis (prevention) as NZMT terminology"
 Usage: #example

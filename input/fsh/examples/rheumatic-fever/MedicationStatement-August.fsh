@@ -10,9 +10,9 @@ Usage: #example
 
 * contained = contained-Lignocaine-dose  // contained resource signifies lignocaine given too
 
-* basedOn = Reference(PlannedMedicationRequestExample)
+* basedOn = Reference(PlannedBenzathineMedication)
 * context = Reference(Encounter-SecondaryProphylaxisAppointment)
-* medicationReference = Reference(SecondaryProphylaxisMedicationExample)
+* medicationReference = Reference(BenzathineMedication)
 * subject insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 
 * effectiveDateTime = "2023-08-08T03:15:00Z"    // UTC datetime

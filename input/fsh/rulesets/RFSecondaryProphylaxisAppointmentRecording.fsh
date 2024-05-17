@@ -37,10 +37,10 @@ RuleSet: makeMedStmtContent
 * contained[0].medicationCodeableConcept insert NZMTMedicationCoding(10747581000116100,[[lidocaine hydrochloride anhydrous 1% (20 mg/2 mL) injection, ampoule]])
 * contained[0].dosage.doseAndRate[0].doseQuantity insert UnitOfMeasureQuantity(0.25,[[ml]],[[ml]])
 
-* basedOn = Reference(PlannedMedicationRequestExample)
+* basedOn = Reference(PlannedBenzathineMedication)
 * partOf.reference = "#contained-Lignocaine-dose"   // NOTE: We only make the container 'partOf' its contained resource to avoid FHIR validator errors
 * context.reference = "http://example.org/fhir/Encounter/1"    // ***** alpha instance in the Bundle  *****
-* medicationReference = Reference(SecondaryProphylaxisMedicationExample)
+* medicationReference = Reference(BenzathineMedication)
 * subject insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 
 * effectiveDateTime = "2023-08-08T03:15:00Z"    // UTC datetime

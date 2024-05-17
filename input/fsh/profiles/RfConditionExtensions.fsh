@@ -19,6 +19,15 @@ Context: Condition
 Extension: RfConditionAssessmentDateExtension
 Id:  rf-condition-assessmentdate
 Title: "Date of assessment of rheumatic heart disease severity"
-Description: "This tracks the date of assessment of rheumatic heart disease severity because Condition.recordedDate is being used for date of diagnosis."
+Description: "Tracks the RF-specific date when rheumatic heart disease severity was assessed."
 Context: Condition
 * value[x] only date
+
+
+Extension: RfConditionSymptomaticAtDiagnosisExtension
+Id:  rf-condition-symptomaticAtDiagnosis
+Title: "symptom status at diagnosis"
+Description: "Symptom status at time of rheumatic fever diagnosis"
+Context: Condition
+* value[x] only Coding
+* value[x] from RheumaticFeverConditionSymptomaticAtDiagnosisValueSet (required)

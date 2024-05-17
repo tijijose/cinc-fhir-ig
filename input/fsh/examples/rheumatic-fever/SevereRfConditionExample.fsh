@@ -3,9 +3,9 @@ InstanceOf: RheumaticFeverCondition
 Usage: #example
 Description: "An example of a rheumatic fever Condition"
 
-* meta.profile = Canonical(RheumaticFeverCondition|1.0.0)
-* meta.versionId = "3"
-* meta.lastUpdated = "2023-12-14T20:00:00Z"
+* meta.profile = Canonical(RheumaticFeverCondition|1.1.0)
+* meta.versionId = "4"
+* meta.lastUpdated = "2024-05-17T07:00:00Z"
 
 * identifier[NationalSystem][0] insert SalesforceConditionIdentifier([[CON-0206]])     // corresponding salesforce record
 * identifier[NationalSystem][+] insert  EpisurvNumber(21-383414-AK)                    // EPISurv nunber as notified to in diagnosis
@@ -20,11 +20,11 @@ Description: "An example of a rheumatic fever Condition"
 * severity = http://snomed.info/sct#24484000 "Severe"
 * code = $sct#195528001 "Acute rheumatic fever (disorder)"
 
+* encounter = Reference(Encounter-Diagnosis)
 * subject insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 
 * onsetDateTime = "2023-02-05"
-* recordedDate = "2022-04-20"
-
+* recordedDate = "2023-03-12T02:00:00Z"
 * recorder insert ReferencePractitioner(99ZZFX,[[Dottie McStuffins]])
 
 * extension[rhdSeverity].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-condition-rhdseverity"
@@ -34,4 +34,7 @@ Description: "An example of a rheumatic fever Condition"
 * extension[diagnosticCertainty].valueCoding = $RFdiagnosticCertaintyCS#probable "probable"
 
 * extension[assessmentDate].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-condition-assessmentdate"
-* extension[assessmentDate].valueDate = "2022-04-14"
+* extension[assessmentDate].valueDate = "2023-03-12"
+
+* extension[symptomStatusAtDiagnosis].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-condition-symptomaticAtDiagnosis"
+* extension[symptomStatusAtDiagnosis].valueCoding = $sct#264931009 "Symptomatic (qualifier value)"

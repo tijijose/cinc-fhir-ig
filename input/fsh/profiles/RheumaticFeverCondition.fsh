@@ -4,16 +4,16 @@ Title: "Rheumatic Fever Condition"
 Description: "This profile contains diagnosis code and adds rheumatic heart disease severity and diagnosis certainty extensions to the base NzCondition resource."
 Id: nz-sharedcare-rheumaticfever-condition
 
-* ^version = "1.0.0"
+* ^version = "1.1.0"
 * ^jurisdiction = urn:iso:std:iso:3166#NZ
 * ^purpose = "Profiles a condition to add severity and diagnostic certainty classifiers and an extra assessment date for capture of NZ rheumatic fever case registration data"
 * insert metaContactDetail([[David Grainger]],[[david.grainger@middleware.co.nz]])
 
 // elements modified
 * subject only Reference(Patient)
+* recordedDate ^short = "Date and time (UTC) of diagnosis" 
 * onset[x] only dateTime
-* onsetDateTime obeys fhir-hnz-dateTime-utc-1
-* recordedDate obeys fhir-hnz-dateTime-utc-1
+* onsetDateTime ^short = "Date and time (UTC) of onset of rheumatic fever"
 * recorder only Reference(Practitioner)
 
 * identifier ^slicing.discriminator.type = #value
@@ -23,7 +23,7 @@ Id: nz-sharedcare-rheumaticfever-condition
 
 // This slice allows (0 or more) use=USUAL identifier references for linking to external 'national' systems.  
 
-* identifier[NationalSystem] ^short = "This slice lets clients link rheumatic fever conditions to corresponding records in external systems eg. Salesforce, EPISurv"
+* identifier[NationalSystem] ^short = "This slice link a rheumatic fever condition instance to its record in the corresponding national system eg. RFCCS"
 
 * identifier[NationalSystem].use 1..1
 * identifier[NationalSystem].use = #usual
@@ -42,11 +42,11 @@ Id: nz-sharedcare-rheumaticfever-condition
 * identifier[NationalSystem].id 0..0       // don't want this kind of thing
 * identifier[NationalSystem].extension 0..0       // don't want this kind of thing
 
-
-
 // bind to the permissible SNOMED codes for RF diagnosis at registration.
 * code 1..1
+* code ^short = "Must be one of the diagnosis at registration codes"
 * code from rf-condition-diagnosisatregistration-code (required)
+
 * severity 0..1
 
 // extensions
@@ -56,8 +56,10 @@ Id: nz-sharedcare-rheumaticfever-condition
   RfConditionDiagnosticCertaintyExtension named diagnosticCertainty 0..1
     and
   RfConditionAssessmentDateExtension named assessmentDate 0..1
+    and
+  RfConditionSymptomaticAtDiagnosisExtension named symptomStatusAtDiagnosis 0..1
 
-* extension[assessmentDate] obeys fhir-hnz-dateTime-utc-1
+* extension[assessmentDate] ^short = "date (UTC) of RHD severity assessment"
 
 // elements prohibited
 * implicitRules 0..0

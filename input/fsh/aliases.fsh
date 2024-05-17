@@ -25,8 +25,10 @@ Alias: $usage-context-type = http://terminology.hl7.org/CodeSystem/usage-context
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $pathway-status-codes = https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/CodeSystem/longterm-pathway-state-cs
 
-Alias: $AVE-whenstarted =  https://nzhts.digital.health.nz/fhir/ValueSet/antiviral-eligibility-symptoms-started   // 0.3.9b
-Alias: $AVE-criteria =  https://nzhts.digital.health.nz/fhir/ValueSet/COVID-19-antiviral-eligibility-criteria     // 0.3.9b
+Alias: $location-type = http://terminology.hl7.org/CodeSystem/v3-RoleCode
+
+Alias: $AVE-whenstarted =  https://nzhts.digital.health.nz/fhir/ValueSet/antiviral-eligibility-symptoms-started
+Alias: $AVE-criteria =  https://nzhts.digital.health.nz/fhir/ValueSet/COVID-19-antiviral-eligibility-criteria
 Alias: $termServerExtension = http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer
 Alias: $preferredTermServer = https://nzhts.digital.health.nz/fhir
 

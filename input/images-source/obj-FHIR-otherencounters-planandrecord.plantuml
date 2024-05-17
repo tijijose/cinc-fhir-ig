@@ -50,7 +50,7 @@ package "Activity resources in the CarePlan" as Activities #Snow {
   object "planned DENTAL appointment\n:**APPOINTMENT**" as FUTURE_APPT #Red {
     *identifier: type #salesforce-careplanactivity-id (RFCCS)
     ---
-    * status: ""**#cancelled**""
+    * status: ""**#booked**""
     * start: ""2024-07-04""
     * serviceType: ""#772071006"" | Referral to dentist (procedure)
     * supportingInfo: dental service provider Ref(org by name)
@@ -100,7 +100,7 @@ object "Info from encounter\n**:OBSERVATION**" as OBS <<FHIR R4B>> #Pink {
   * components 3..3 (SNOMED-coded)
   \t+notes: text
   \t+plan for next appointment: text
-  \t+file uplodade: TBC
+  \t+file uploaded: TBC
 }
 
 

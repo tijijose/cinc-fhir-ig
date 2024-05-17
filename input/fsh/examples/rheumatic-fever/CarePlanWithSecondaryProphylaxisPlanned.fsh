@@ -23,7 +23,7 @@ Description: "Example of an RF care plan with secondary prophylaxis medication p
 * period.end = "2033-07-31"
 * status = #active
 
-* activity[0].reference = Reference(PlannedMedicationRequestExample)
+* activity[0].reference = Reference(PlannedBenzathineMedication)
 * activity[+].reference = Reference(SecondaryProphylaxisAppointment-August-Booked)
 * activity[+].reference = Reference(SecondaryProphylaxisAppointment-September-Booked)
 

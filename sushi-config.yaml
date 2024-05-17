@@ -275,29 +275,30 @@ groups:
     description: All rheumatic fever example FHIR instances
     resources:
     - BasicCarePlan
-    - DraftCarePlan
+    - BenzathineMedication
+    - CarePlanClosed
+    - CarePlanWentOnHold
     - CarePlanWithOneAppointmentCompleted
     - CarePlanWithSecondaryProphylaxisPlanned
-    - CarePlanWentOnHold
-    - CarePlanClosed
+    - DraftCarePlan
+    - Encounter-Diagnosis
+    - Encounter-SecondaryProphylaxisAppointment
+    - JonesCriteriaObservationExample
     - MadeleineMeringue
+    - MadeleineMeringueAndWhanau
+    - MedicationsAndFollowUpGuidanceQuestionnaireResponse
+    - MedicationStatement-August
     - PaniaPunga
-    - SevereRfConditionExample
-    - PlannedMedicationRequestExample
-    - SecondaryProphylaxisMedicationExample
+    - PatientMedicationAllergyQuestionnaireResponse
+    - PatientWhanauGoalsPreferencesQuestionnaireResponse
+    - PlannedBenzathineMedication
+    - RFPatientHealthAssessmentQuestionnaireResponse
     - SecondaryProphylaxisAppointment-August-Booked
     - SecondaryProphylaxisAppointment-August-Fulfilled
     - SecondaryProphylaxisAppointment-September-Booked
-    - Encounter-SecondaryProphylaxisAppointment
-    - MedicationStatement-August
-    - SecondaryProphylaxisCareTeam
-    - MadeleineMeringueAndWhanau
-    - MedicationsAndFollowUpGuidanceQuestionnaireResponse
-    - PatientMedicationAllergyQuestionnaireResponse
-    - PatientWhanauGoalsPreferencesQuestionnaireResponse
-    - RFPatientHealthAssessmentQuestionnaireResponse
     - SecondaryProphylaxisAugustEncounterBundle
-    - JonesCriteriaObservationExample
+    - SecondaryProphylaxisCareTeam
+    - SevereRfConditionExample
     
   RheumaticFeverTerminology:
     name: Rheumatic Fever terminology
@@ -306,6 +307,7 @@ groups:
     - RheumaticFeverConditionDiagnosticCertaintyCodeSystem
     - RheumaticFeverConditionDiagnosticCertaintyValueSet
     - RheumaticFeverConditionDiagnosisAtRegistrationValueSet
+    - RheumaticFeverConditionSymptomaticAtDiagnosisValueSet
     - RheumaticFeverConditionRHDSeverityValueSet
     - RheumaticFeverMedicationAllergyValueSet
     - RheumaticFeverCarePlanCategoryValueSet

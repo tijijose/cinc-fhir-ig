@@ -47,7 +47,7 @@ package "Activity resources in the CarePlan" as Activities #Snow {
   
   'object "secondary prophylaxis\nmedication planning" as PLAN_BENZA_2023 #LightSalmon
 
-  object "<size:15>:**MEDICATIONREQUEST**\nplanned Benzathine med." as MR1 <<profiled>> #LightSalmon {
+  object "<size:15>:**MEDICATIONREQUEST**\nplanned Benzathine med." as MR1 <<RF profile>> #LightSalmon {
     * text: "Benzathine medication plan 2023"
     * status: ""**#active**""
     * medicationReference: Ref(benzathine medication)
@@ -63,19 +63,12 @@ package "Activity resources in the CarePlan" as Activities #Snow {
   }
 
   
-  object "<size:15>:**MEDICATIONREQUEST**\nplanned pain relief med." as MRinner <<profiled>> #LightSalmon {
-    * text: "Lignocaine medication plan 2023"
+  object "<size:15>:**MEDICATIONREQUEST**\nplanned pain relief" as MRinner <<FHIR R4B>> #GhostWhite {
+    * text: "Lignocaine at 1% strength"
     * status: ""**#active**""
-    * medicationCodeableConcept: lignocaine strength
-    * dosageInstruction
-      \t-route:SNOMED
-      \t-site:SNOMED
-      \t-additionalInstruction [frequency]
-      \t-doseAndRate:Dosage
-    * performer: Ref(Practitioner)
-    * validityPeriod: eg. **2023-01 to 2023-12**
-    --- extension ---
-    * medicationFrequency: **Every twenty eight days**
+    * medicationCodeableConcept: NZMT
+    * dosageInstruction.doseAndRate: Dosage
+    * validityPeriod: {same period as Benzathine plan}
   }
 
   object "August 2023 (latest) appointment\n:**APPOINTMENT**" as AUGUST_APPT #Red {
@@ -106,8 +99,9 @@ package "Activity resources in the CarePlan" as Activities #Snow {
 object "August 2023 encounter\n:**ENCOUNTER**" as EInj1 #yellow {
   *identifier: type #salesforce-clinicalencounter-id (RFCCS)
   ---
-  * status: //**#finished**//
-  * period: 2023-08-08
+  * status: ""#finished""
+  * class: ""#AMB""
+  * period.start: 2023-08-08
   * participant: Ref(Practitioner)
   * serviceProvider: Ref(Organisation)
 }
@@ -167,12 +161,13 @@ $Quantity(LDOSE,"lignocaine dose planned","0.5","ml")
 ' positioning
 
 ' connectors
-MR1 "contained" -d-* MRinner
 
+MR1 "contained" -d-* MRinner
 MEDSTMTinner *-[norank]- "contained" MEDSTMT1 
-MEDSTMTinner  -[#MediumPurple,dotted]d--> LIGNOCODE : medicationCodeableConcept
-MRinner  -[#MediumPurple,dotted,norank]---> LIGNOCODE
-MRinner  -[dotted]d-> "<color:DimGray><size:14>Dosage.doseAndRate" LDOSE
+MEDSTMTinner  -[#MediumPurple,dotted,norank]--> LIGNOCODE : medicationCodeableConcept
+MRinner "\n<color:Purple>.medicationCodeableConcept" -[#MediumPurple,dashed]d--> LIGNOCODE
+MRinner "\n<color:DimGray>.Dosage\n.doseAndRate" -[dashed]d-> LDOSE
+MRinner "basedOn" -[thickness=3,norank]-> MR1
 
 EInj1 <-[norank]l- MEDSTMT1: < context
 
@@ -182,9 +177,9 @@ QR1 "encounter" -> EInj1
 AUGUST_APPT "supportingInfo" -d-> EInj1
 EInj1 "appointment" -[thickness=3,norank]u--> AUGUST_APPT
 
-MR1 -[#MediumPurple,dotted]u-> "<color:MediumPurple><size:14>Dsage.route" Route
-MR1  -[#MediumPurple,dotted]u-> "<color:MediumPurple><size:14>Dosage.site" Site
-MR1  -[dotted]u-> "<color:DimGray><size:14>Dosage.doseAndRate" BDOSE
+MR1 -[#MediumPurple,dashed]u-> "<color:MediumPurple>Dosage.route" Route
+MR1  -[#MediumPurple,dashed]u-> "<color:MediumPurple>Dosage.site" Site
+MR1  -[dashed]u-> "<color:DimGray><size:14>Dosage.doseAndRate" BDOSE
 MR1 -[norank]r-> MED : > medicationReference
 
 MEDSTMT1 "basedOn" -[thickness=3]r-> MR1
@@ -192,9 +187,8 @@ MEDSTMT1 -[norank]r-> MED : > medicationReference
 
 MEDSTMTinner "basedOn" -[thickness=3]r-> MRinner
 
-MED "\ningredient" -[#MediumPurple]-> MedIngr
-MED "code" -[#MediumPurple]-> MedBrand
-
+MED "<color:Purple>\ningredient" .[#MediumPurple].> MedIngr
+MED "<color:Purple>code" .[#MediumPurple].> MedBrand
 
 'notes
 ' note as N1

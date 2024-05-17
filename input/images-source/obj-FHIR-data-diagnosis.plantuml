@@ -45,7 +45,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
      * code: ""#195528001"" Acute rheumatic fever
      * severity: ""#mild | #moderate | #severe""
      * clinicalStatus: #active etc.
-     * effectiveDateTime: date of diagnosis
+     * recordedDate: **date of diagnosis**
      * onsetDateTime: date of condition onset
     -- extensions --
       * **rhdSeverity**: code (in dedicated ValueSet)
@@ -57,9 +57,11 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
   object "context of diagnosis:ENCOUNTER" as DENCOUNTER <<FHIR R4B>> #LightGoldenRodYellow {
     Tracks context of patient's diagnosis.
     ---
-    * serviceType
+    * status: ""#finished""
+    * class: ""#AMB""
+    * serviceType: context of diagnosis SNOMED
     * period.start: date of diagnosis
-    * participant[]: Reference[Patient] 
+    * participant[0]: Reference[Patient] 
     + location[0]: hospital or service name
     + location[1]: patient home address when diagnosed
     + location[2]: school when diagnosed
@@ -155,7 +157,7 @@ RFCOND "stage.assessment[0]" -d-> OBS1
 RFCOND "stage.assessment[1]" -d-> OBS2
 RFCOND "stage.assessment[2]" -d-> OBS3
 
-RFCOND "\n\n\n<color:MediumPurple><size:14>.serviceType" -[#MediumPurple,dotted]u-> EncContext
+DENCOUNTER "\n\n\n<color:MediumPurple><size:14>.serviceType" -[#MediumPurple,dotted]u-> EncContext
 
 OBS1 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> JONESCODING
 OBS2 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> SEVCODING

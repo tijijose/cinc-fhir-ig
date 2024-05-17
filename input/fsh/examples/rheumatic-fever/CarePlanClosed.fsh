@@ -23,7 +23,7 @@ Description: "Example of an RF care plan that has gone on-hold, after the first 
 * period.end = "2033-07-31"
 * status = #revoked
 
-* activity[0].reference = Reference(PlannedMedicationRequestExample)
+* activity[0].reference = Reference(PlannedBenzathineMedication)
 * activity[+].reference = Reference(SecondaryProphylaxisAppointment-August-Fulfilled)
 * activity[+].reference = Reference(SecondaryProphylaxisAppointment-September-Booked)
 
