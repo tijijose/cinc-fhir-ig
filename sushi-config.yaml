@@ -292,6 +292,7 @@ groups:
     - PatientMedicationAllergyQuestionnaireResponse
     - PatientWhanauGoalsPreferencesQuestionnaireResponse
     - PlannedBenzathineMedication
+    - PlannedBenzathineMedicationWithLignocaine
     - RFPatientHealthAssessmentQuestionnaireResponse
     - SecondaryProphylaxisAppointment-August-Booked
     - SecondaryProphylaxisAppointment-August-Fulfilled

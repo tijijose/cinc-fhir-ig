@@ -4,8 +4,8 @@ Usage: #example
 Description: "Example of an RF care plan after the first secondary prophylaxis appointment has been attended."
 
 * meta.profile = Canonical(RheumaticFeverCarePlan|1.0.0)
-* meta.versionId = "2"
-* meta.lastUpdated = "2023-11-07T04:00:00Z"
+* meta.versionId = "3"
+* meta.lastUpdated = "2024-05-20T00:00:00Z"
 
 * identifier[NHI] insert NHIIdentifier(SCF7824)
 * identifier[NationalSystem][0] insert SalesforceCarePlanIdentifier(00073693)
@@ -23,7 +23,7 @@ Description: "Example of an RF care plan after the first secondary prophylaxis a
 * period.end = "2033-07-31"
 * status = #active
 
-* activity[0].reference = Reference(PlannedBenzathineMedication)
+* activity[0].reference = Reference(PlannedBenzathineMedicationWithLignocaine)
 * activity[+].reference = Reference(SecondaryProphylaxisAppointment-August-Fulfilled)
 * activity[+].reference = Reference(SecondaryProphylaxisAppointment-September-Booked)
 

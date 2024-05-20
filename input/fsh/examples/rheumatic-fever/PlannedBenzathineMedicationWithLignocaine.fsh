@@ -34,7 +34,7 @@ Usage: #example
 * dispenseRequest.validityPeriod.start = "2023-08-01"
 * dispenseRequest.validityPeriod.end = "2026-07-31"
 
-* contained = contained-Lignocaine  // contained resource represents planned lignocaine pain relief
+* contained[0] = contained-Lignocaine  // contained resource represents planned lignocaine pain relief
 
 // *************
 Instance: contained-Lignocaine
