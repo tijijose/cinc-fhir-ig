@@ -1,11 +1,11 @@
 Instance: SecondaryProphylaxisAppointment-September-Booked
 InstanceOf: Appointment
-Description: "Example of a booked patient appointment for rheumatic fever secondary prophylaxis treatment (injection)"
+Description: "Example of a booked patient appointment for RF secondary prophylaxis treatment with the shared care provider"
 Usage: #example
 
 * meta.profile = Canonical(Appointment)
-* meta.versionId = "2"
-* meta.lastUpdated = "2023-11-09T05:00:00Z"
+* meta.versionId = "3"
+* meta.lastUpdated = "2024-05-14T05:00:00Z"
 
 * description = "monthly injection September 2023"
 
@@ -18,8 +18,6 @@ Usage: #example
 
 * participant[0].actor insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 * participant[=].status = #accepted
-* participant[+].actor insert ReferencePractitioner(99ZAAA,[[Isabel Injecta]])
-* participant[=].status = #accepted
 
-* supportingInformation[0] insert ReferenceOrganisation(G0M086-B,[[Te Tai Tokerau Rheumatic Fever Secondary Prevention Service]])
-* comment = "The plan for this appointment is..."
+* supportingInformation[0] insert ReferenceOrganisation(G0M744-C,[[Taranaki Rheumatic Fever Secondary Prevention Service]])
+* comment = "This appointment will be carried out in Taranaki by the shared care provider."
