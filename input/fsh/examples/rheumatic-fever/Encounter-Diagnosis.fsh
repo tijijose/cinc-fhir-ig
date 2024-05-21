@@ -4,7 +4,7 @@ Usage: #example
 Description: "Encounter capturing context of a patient's rheumatic fever diagnosis"
 
 * meta.profile = Canonical(ManaakiNgaTahiEncounter)
-* meta.versionId = "1"
+* meta.versionId = "2"
 * meta.lastUpdated = "2024-05-17T08:00:00Z"
 
 * status = #finished

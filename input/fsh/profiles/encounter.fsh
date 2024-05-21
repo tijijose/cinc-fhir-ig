@@ -1,7 +1,7 @@
 Profile: ManaakiNgaTahiEncounter
 Parent: Encounter
 Description: "Encounter FHIR resource for Manaaki Nga Tahi"
-* ^version = "0.3.0"
+* ^version = "0.4.0"
 
 // elements modified
 * diagnosis.condition only Reference(Condition)
