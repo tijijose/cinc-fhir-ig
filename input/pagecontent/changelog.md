@@ -39,11 +39,11 @@ These examples have been adjusted to correctly reflect the Taranaki RF SP servic
 
 #### Medication planning and recording
 
-- Renamed the planned medication example to [*PlannedBenzathineMedication*](PlannedBenzathineMedication.html) 
-- Added a second example of planned medication [*PlannedBenzathineMedicationWithLignocaine*](PlannedBenzathineMedicationWithLignocaine.html) showing how lignocaine strength/dosage represented in a contained MedicationRequest.  This instance is now used as the planned medication by the IG example RF CarePlans.
-- Lignocaine administration via a contained MedicationStatement instance is now demonstrated in two example MedicationStatements: 
+- Renamed the planned medication example to [*PlannedBenzathineMedication*](MedicationRequest-PlannedBenzathineMedication.html)
+- Added a second example of planned medication [*PlannedBenzathineMedicationWithLignocaine*](MedicationRequest-PlannedBenzathineMedicationWithLignocaine.html) showing how lignocaine strength/dosage represented in a contained MedicationRequest.  This instance is now used as the planned medication by the IG example RF CarePlans.
+- Lignocaine recording via a contained MedicationStatement instance is now demonstrated in two example MedicationStatements:
 
-1. [MedicationStatement-August](MedicationStatement-MedicationStatement-August.html) 
+1. [MedicationStatement-August](MedicationStatement-MedicationStatement-August.html)
 2. [SecondaryProphylaxisAugustEncounterBundle](Bundle-SecondaryProphylaxisAugustEncounterBundle.html)
 
 #### Miscellaneous
