@@ -4,8 +4,8 @@ Description: "Example of a Bundled POST which creates instances of Encounter, Me
 Usage: #example
 
 * meta.profile = Canonical(Bundle)
-* meta.versionId = "1"
-* meta.lastUpdated = "2023-11-27T00:00:00Z"
+* meta.versionId = "2"
+* meta.lastUpdated = "2024-05-17T06:10:00Z"
 
 * type = #transaction
 
