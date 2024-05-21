@@ -26,7 +26,7 @@ Usage: #example
 
 * note insert markdownAnnotation([[Benzathine Brand used:**Bicillin L-A**]])
 
- // NOTE: We only do this to avoid a FHIR validator error about linkage to/from contained resource
+ // NOTE: We MUST form this reference to satisfy the FHIR validation rule that a reference must exist between a contained instance and its container (or else runtime validation error)
 * partOf.reference = "#contained-Lignocaine-dose"  
 
 // *************

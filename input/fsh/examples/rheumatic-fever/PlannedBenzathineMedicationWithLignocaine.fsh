@@ -44,7 +44,7 @@ Usage: #inline
 * status = #active
 * intent = #plan
 * subject insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
-* basedOn = Reference(PlannedBenzathineMedicationWithLignocaine)
+* basedOn.reference = "#"     // note this is the only FSH syntax found which prevents runtime validation errors by ensuring the rule is met that a contained instance must references its container
 
 * medicationCodeableConcept insert NZMTMedicationCoding(10747581000116100,[[lidocaine hydrochloride anhydrous 1% (20 mg/2 mL) injection, ampoule]])
 * dosageInstruction.doseAndRate[0].doseQuantity insert UnitOfMeasureQuantity(0.25,[[ml]],[[ml]])
