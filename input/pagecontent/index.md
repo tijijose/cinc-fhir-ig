@@ -9,7 +9,7 @@ The *Te Whatu Ora Shared Care API* covers two solution areas at present:
 
 This IG brings together all the artifacts necessary to understand and use the FHIR API.
 
-It is based on [FHIR R4](http://hl7.org/fhir/) and NZBase IG 2.0.
+It is based on [FHIR R4](http://hl7.org/fhir/) and NZBase IG 3.0.
 
 ### Warning: The official Url of this IG will soon be changing
   

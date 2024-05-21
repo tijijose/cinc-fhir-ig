@@ -7,6 +7,10 @@ Usage: #definition
 * meta.versionId = "2"
 * meta.lastUpdated = "2024-05-14T05:00:00Z"
 
+* identifier[0].use = #official
+* identifier[=].value = "RheumaticFeverLeadProviderGroup"
+* identifier[=].period.start = "2023-11-14"
+
 * name = "Group of lead rheumatic fever provider organisations"
 * status = #active
 * participant[0].member insert ReferenceOrganisation(G0M086-B,[[Te Tai Tokerau Rheumatic Fever Secondary Prevention Service]])
