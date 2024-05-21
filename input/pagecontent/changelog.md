@@ -25,21 +25,30 @@
 1. Date of RHD severity assessment (Condition.**assessmentDate**)
 1. Symptom status at time of RF diagnosis (Condition.**symptomStatusAtDiagnosis**)
 
-### Examples
+### [Examples](artifacts.html#rheumatic-fever-examples)
 
-**Condition and diagnosis extensions**
+#### Shared care provider scenario
+
+These examples have been adjusted to correctly reflect the Taranaki RF SP service as a shared care provider by referencing its HPI org Id **G0M744-C**
+- [Madeleine Meringue's care team](CareTeam-SecondaryProphylaxisCareTeam.html)
+- [Booked september appointment](Appointment-SecondaryProphylaxisAppointment-September-Booked.html)
+
+#### Condition and diagnosis extensions
+
 - Expanded [RfCondition](Condition-SevereRfConditionExample.html) example to use a new extension (symptomStatusAtDiagnosis) and reference a diagnosis Encounter (see below)
 
-**Medication planning and recording**
+#### Medication planning and recording
+
 - Renamed the planned medication example to [*PlannedBenzathineMedication*](PlannedBenzathineMedication.html) 
 - Added a second example of planned medication [*PlannedBenzathineMedicationWithLignocaine*](PlannedBenzathineMedicationWithLignocaine.html) showing how lignocaine strength/dosage represented in a contained MedicationRequest.  This instance is now used as the planned medication by the IG example RF CarePlans.
 - Lignocaine administration via a contained MedicationStatement instance is now demonstrated in two example MedicationStatements: 
+
 1. [MedicationStatement-August](MedicationStatement-MedicationStatement-August.html) 
 2. [SecondaryProphylaxisAugustEncounterBundle](Bundle-SecondaryProphylaxisAugustEncounterBundle.html)
 
-**Miscellaneous**
+#### Miscellaneous
+
 - Added new example of Observation resource illustrating [Jones Criteria](Observation-JonesCriteriaObservationExample.html) components
-- Corrected examples having shared care provider references to **Taranaki Rheumatic Fever Secondary Prevention Service** to use the current HPI org ID (**G0M744-C**)
 - Added a new example [Diagnosis Encounter](Encounter-Encounter-Diagnosis.html) capturing representing context and locations of RF diagnosis.
 
 ### Consent (2024-05-07)
