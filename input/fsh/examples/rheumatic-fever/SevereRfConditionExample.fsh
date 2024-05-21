@@ -3,7 +3,7 @@ InstanceOf: RheumaticFeverCondition
 Usage: #example
 Description: "An example of a rheumatic fever Condition"
 
-* meta.profile = Canonical(RheumaticFeverCondition|1.1.0)
+* meta.profile = Canonical(RheumaticFeverCondition)
 * meta.versionId = "4"
 * meta.lastUpdated = "2024-05-17T07:00:00Z"
 
