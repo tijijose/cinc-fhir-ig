@@ -24,9 +24,10 @@ Usage: #example
 * dosage.route insert SNOMEDCoding(78421000,[[Intramuscular route (qualifier value)]])
 * dosage.doseAndRate[0].doseQuantity insert UnitOfMeasureQuantity(25,[[mg]],[[mg]]) 
 
-* note insert markdownAnnotation([[Benzathine Brand used:**Bicillin L-A**]])
+// removed after data dictionary May 22 2024 since the brand is now represented in the referenced Medication instance
+// * note insert markdownAnnotation([[Benzathine Brand used:**Bicillin L-A**]])
 
- // NOTE: We MUST form this reference to satisfy the FHIR validation rule that a reference must exist between a contained instance and its container (or else runtime validation error)
+ // NOTE: We MUST form this reference to satisfy the FHIR validation rule that a reference must exist between a contained instance and its container (or else runtime validation error)medication
 * partOf.reference = "#contained-Lignocaine-dose"  
 
 // *************

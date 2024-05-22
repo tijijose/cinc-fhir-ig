@@ -53,7 +53,8 @@ RuleSet: makeMedStmtContent
 * dosage.route insert SNOMEDCoding(78421000,[[Intramuscular route (qualifier value)]])
 * dosage.doseAndRate[0].doseQuantity insert UnitOfMeasureQuantity(25,[[mg]],[[mg]]) 
 
-* note insert markdownAnnotation([[Benzathine Brand used:**Bicillin L-A**]])
+// removed after data dictionary May 22 2024 since the brand is now represented in the referenced Medication instance
+// * note insert markdownAnnotation([[Benzathine Brand used:**Bicillin L-A**]])
 
 
 // QuestionnaireResponse: patient health assessment questions at appointment

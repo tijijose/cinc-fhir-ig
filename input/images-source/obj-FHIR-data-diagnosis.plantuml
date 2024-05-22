@@ -94,7 +94,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: #JONES 
+    * code: SNOMED TBC
     ---
     * components 0..*
     \t+value[x]: result or measurement
@@ -107,7 +107,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: #RHDSEV
+    * code: SNOMED TBC
     ---
     * components 0..*
     \t+value[x]: result or measurement
@@ -115,18 +115,32 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     \t+interpretation: code
   }
 
-  object "<size:18>Strep evidence\n**:OBSERVATION**" as OBS3 <<FHIR R4B>> #DarkSeaGreen {
+  object "<size:18>Strep primary evidence\n**:OBSERVATION**" as OBS3 <<FHIR R4B>> #DarkSeaGreen {
     *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: #STREP 
+    * code: SNOMED TBC 
     ---
     * components 0..*
     \t+value[x]: result or measurement
     \t+dataAbsentReason: code
     \t+interpretation: code
   }
+
+  object "<size:18>Strep repeat testing\n**:OBSERVATION**" as OBS4 <<FHIR R4B>> #DarkSeaGreen {
+    *identifier: type #salesforce-observation-id (RFCCS)
+    ---
+    * status: ""#final""
+    * effectiveDateTime: datetime
+    * code: SNOMED TBC 
+    ---
+    * components 0..*
+    \t+value[x]: result or measurement
+    \t+dataAbsentReason: code
+    \t+interpretation: code
+  }
+
 
   'arrange activities in box
 '  OBS1 -[hidden]d- OBSERVATION
@@ -156,6 +170,7 @@ RFCOND ".encounter" -r-> DENCOUNTER
 RFCOND "stage.assessment[0]" -d-> OBS1
 RFCOND "stage.assessment[1]" -d-> OBS2
 RFCOND "stage.assessment[2]" -d-> OBS3
+OBS3 "hasMember" <-[norank]-> "derivedFrom" OBS4
 
 DENCOUNTER "\n\n\n<color:MediumPurple><size:14>.serviceType" -[#MediumPurple,dotted]u-> EncContext
 
