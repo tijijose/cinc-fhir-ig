@@ -89,7 +89,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
   '   +**interpreterRequired**: boolean
   ' }
 
-  object "<size:18>Jones Criteria\n**:OBSERVATION**" as OBS1 <<FHIR R4B>> #DarkSeaGreen {
+  object "<size:18>ECHO assessment\n**:OBSERVATION**" as OBS1 <<FHIR R4B>> #DarkSeaGreen {
     *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
@@ -102,7 +102,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     \t+interpretation: code
   }
 
-  object "<size:18>RHD severity assessment\n**:OBSERVATION**" as OBS2 <<FHIR R4B>> #DarkSeaGreen {
+  object "<size:18>Jones Criteria\n**:OBSERVATION**" as OBS2 <<FHIR R4B>> #DarkSeaGreen {
     *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
@@ -170,12 +170,16 @@ RFCOND ".encounter" -r-> DENCOUNTER
 RFCOND "stage.assessment[0]" -d-> OBS1
 RFCOND "stage.assessment[1]" -d-> OBS2
 RFCOND "stage.assessment[2]" -d-> OBS3
-OBS3 "hasMember" <-[norank]-> "derivedFrom" OBS4
+OBS3 "hasMember\n1" <-[norank]-> "derivedFrom\n0..1" OBS4
+note on link #Yellow
+At most one repeat instance
+per primary Observation
+endnote
 
 DENCOUNTER "\n\n\n<color:MediumPurple><size:14>.serviceType" -[#MediumPurple,dotted]u-> EncContext
 
-OBS1 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> JONESCODING
-OBS2 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> SEVCODING
+OBS1 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> SEVCODING
+OBS2 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> JONESCODING
 OBS3 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> STREPCODING
 
 legend bottom
