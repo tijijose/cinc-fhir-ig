@@ -4,8 +4,8 @@ Description: "Illustrates a request for active secondary prophylaxis medication 
 Usage: #example
 
 * meta.profile = Canonical(RheumaticFeverMedicationRequest|1.0.0)
-* meta.versionId = "2"
-* meta.lastUpdated = "2023-11-24T00:10:00Z" // UTC datetime
+* meta.versionId = "3"
+* meta.lastUpdated = "2024-05-29T04:00:00Z" // UTC datetime
 
 * authoredOn = "2023-07-12T04:22:55.965Z"
 
@@ -31,5 +31,5 @@ Usage: #example
 * extension[medicationFrequency].url = Canonical(rf-medicationrequest-medicationfrequency)
 * extension[medicationFrequency].valueCoding = $sct#1511000175108 "Every twenty eight days (qualifier value)"
 
-* dispenseRequest.validityPeriod.start = "2023-08-01"
-* dispenseRequest.validityPeriod.end = "2026-07-31"
+* dispenseRequest.validityPeriod.start = "2023-08-01T00:12:00Z"
+* dispenseRequest.validityPeriod.end = "2026-07-31T00:12:00Z"
