@@ -5,6 +5,11 @@
 - Changed date values to *dateTime* datatype in elements that need to be accurately convert to/from UTC representation
 - Publisher-generated narrative text suppressed in canonical Questionnaires and CareTeam
 
+### [Examples](artifacts.html#rheumatic-fever-examples)
+
+- Madeleine Meringue example patient - changed language code to #en (English) to fix BCP-47 terminology publisher validation problem
+- Pania Punga example patient - changed language code for Maori to #mi to fix BCP-47 terminology publisher validation problem
+
 ---
 
 ## v0.4.0 Rheumatic Fever phase 2 part 1 (May 2024)
