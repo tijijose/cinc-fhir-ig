@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.2 Rheumatic Fever phase 2 part 2 (June 2024)
+
+- Changed date values to *dateTime* datatype in elements that need to be accurately convert to/from UTC representation
+- Publisher-generated narrative text suppressed in canonical Questionnaires and CareTeam
+
+---
+
 ## v0.4.0 Rheumatic Fever phase 2 part 1 (May 2024)
 
 ### [Data model designs](rheumatic-fever-data-models.html)
