@@ -316,8 +316,6 @@ groups:
     - RheumaticFeverConditionSymptomaticAtDiagnosisValueSet
     - RheumaticFeverConditionRHDSeverityValueSet
     - RheumaticFeverMedicationAllergyValueSet
-    - RheumaticFeverCarePlanCategoryValueSet
-    - RheumaticFeverCareTeamCategoryValueSet
     - RheumaticFeverCareTeamParticipantRoleValueSet
     - RheumaticFeverMedicationRequestMedicationFrequencyValueSet
     - QualifiedYesNoAnswerValueSet
