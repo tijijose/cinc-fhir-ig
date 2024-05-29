@@ -62,18 +62,23 @@ dependencies:
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
 # resource), the code is the YAML key. If a parameter allows repeating
-# values, the value in the YAML should be a sequence/array. For a
-# partial list of allowed parameters see:
-# https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+# values, the value in the YAML should be a sequence/array.
+#
+#  https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html
+#  https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
 #
 parameters:
   show-inherited-invariants: false
   bundle-references-resolve: false
-  default-contact: true              # DG 13/11/2023: publish contact info for all resources (using canonical meta contact where specified)
-  apply-version: false               # 19/12/2023: stop publisher from overwriting artefact-specific versions
-  default-version: true              # DG 13/11/2023: versions of canonicals that specify their own version no longer overwritten by the IG publisher
-  suppressed-ids: $examples          # DG 13/11/2023: stop IG publisher generating ids for all example resource instances
-  display-warnings: true             # DG 13/11/2023: stop IG publisher reporting terminology problems as errors
+  default-contact: true              # publish contact info for all resources (using canonical meta contact where specified)
+  apply-version: false               # stop publisher from overwriting artefact-specific versions
+  default-version: true              # versions of canonicals that specify their own version no longer overwritten by the IG publisher
+  suppressed-ids: $examples          # stop IG publisher generating ids for all example resource instances
+  display-warnings: true             # stop IG publisher reporting terminology problems as errors
+  no-narrative:             #  Suppress narrative so resource content generated ready for seeding 
+  - Questionnaire/*
+  - CareTeam/*
+
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
