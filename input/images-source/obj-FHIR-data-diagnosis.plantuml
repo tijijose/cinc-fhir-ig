@@ -120,7 +120,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: SNOMED nnnn <size:12>waiting for code</size>
+    * code: 448011000210101 <size:12>Evidence of preceding\n<size:12>Streptococcus group A infection
     ---
     * components 0..*
     \t+value[x]: result or measurement
@@ -133,7 +133,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: SNOMED nnnn <size:12>waiting for code</size>
+    * code: 448011000210101 <size:12>Evidence of preceding\n<size:12>Streptococcus group A infection
     ---
     * components 0..*
     \t+value[x]: result or measurement

@@ -8,4 +8,5 @@ Description:  "This value set defines SNOMED codes which represent groupings of 
 
 * $sct#439238004 "Echocardiography test interpretation (observable entity)"
 * $sct#447541000210107 "New Zealand Jones Criteria Assessment (observable entity)"
+* $sct#448011000210101 "Evidence of preceding Streptococcus group A infection"
 // * $sct#tbd "strep "
