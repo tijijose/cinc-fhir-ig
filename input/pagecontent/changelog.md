@@ -2,13 +2,25 @@
 
 ## v0.4.2 Rheumatic Fever phase 2 part 2 (June 2024)
 
-- Changed date values to *dateTime* datatype in elements that need to be accurately convert to/from UTC representation
-- Publisher-generated narrative text suppressed in canonical Questionnaires and CareTeam
+### Profiles
+
+- Added new profile on Observation resource [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)
+- Added descriptions to extension elements to clarify usage in the [Rheumatic Fever Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
 
 ### [Examples](artifacts.html#rheumatic-fever-examples)
 
 - Madeleine Meringue example patient - changed language code to #en (English) to fix BCP-47 terminology publisher validation problem
 - Pania Punga example patient - changed language code for Maori to #mi to fix BCP-47 terminology publisher validation problem
+
+### Terminology
+
+- Added a new [ValueSet](ValueSet-rf-observation-diagnosisgroup-code.html) to constrain SNOMED codes used on [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)s
+- Improved Terminology Overview page
+
+### Miscellany
+
+- Changed date values to *dateTime* datatype in elements that need to be accurately convert to/from UTC representation
+- Publisher-generated narrative text suppressed in canonical Questionnaires and CareTeam
 
 ---
 

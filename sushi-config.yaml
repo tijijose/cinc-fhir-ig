@@ -289,6 +289,7 @@ groups:
     - StructureDefinition/nz-sharedcare-rheumaticfever-condition
     - StructureDefinition/nz-sharedcare-rheumaticfever-patient
     - StructureDefinition/nz-sharedcare-rheumaticfever-medicationrequest
+    - StructureDefinition/nz-sharedcare-rheumaticfever-diagnosisgroup
     - MedicationsAndFollowUpGuidanceQuestionnaire
     - PatientMedicationAllergyQuestionnaire
     - PatientWhanauGoalsPreferencesQuestionnaire
@@ -331,9 +332,10 @@ groups:
     resources:
     - RheumaticFeverConditionDiagnosticCertaintyCodeSystem
     - RheumaticFeverConditionDiagnosticCertaintyValueSet
-    - RheumaticFeverConditionDiagnosisAtRegistrationValueSet
+    - RheumaticFeverConditionDiagnosisSummaryValueSet
     - RheumaticFeverConditionSymptomaticAtDiagnosisValueSet
     - RheumaticFeverConditionRHDSeverityValueSet
+    - RheumaticFeverDiagnosisObservationGroupValueSet
     - RheumaticFeverMedicationAllergyValueSet
     - RheumaticFeverCareTeamParticipantRoleValueSet
     - RheumaticFeverMedicationRequestMedicationFrequencyValueSet

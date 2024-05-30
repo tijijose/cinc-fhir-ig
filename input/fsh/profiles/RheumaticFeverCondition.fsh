@@ -4,7 +4,7 @@ Title: "Rheumatic Fever Condition"
 Description: "This profile contains diagnosis code and adds rheumatic heart disease severity and diagnosis certainty extensions to the base NzCondition resource."
 Id: nz-sharedcare-rheumaticfever-condition
 
-* ^version = "1.1.0"
+* ^version = "1.0.0"
 * ^jurisdiction = urn:iso:std:iso:3166#NZ
 * ^purpose = "Profiles a condition to add severity and diagnostic certainty classifiers and an extra assessment date for capture of NZ rheumatic fever case registration data"
 * insert metaContactDetail([[David Grainger]],[[david.grainger@middleware.co.nz]])
@@ -42,10 +42,10 @@ Id: nz-sharedcare-rheumaticfever-condition
 * identifier[NationalSystem].id 0..0       // don't want this kind of thing
 * identifier[NationalSystem].extension 0..0       // don't want this kind of thing
 
-// bind to the permissible SNOMED codes for RF diagnosis at registration.
+// bind to the permissible SNOMED codes for NZ RF diagnosis.
 * code 1..1
-* code ^short = "Must be one of the diagnosis at registration codes"
-* code from rf-condition-diagnosisatregistration-code (required)
+* code ^short = "Must be one of the diagnosis codes"
+* code from rf-condition-diagnosis-code (required)
 
 * severity 0..1
 
@@ -60,6 +60,7 @@ Id: nz-sharedcare-rheumaticfever-condition
   RfConditionSymptomaticAtDiagnosisExtension named symptomStatusAtDiagnosis 0..1
 
 * extension[assessmentDate] ^short = "date (UTC) of RHD severity assessment"
+* extension[diagnosticCertainty] ^short = "This certainty code value must be interpreted in conjunction with the patient's diagnosis in Condition.code"
 
 // elements prohibited
 * implicitRules 0..0

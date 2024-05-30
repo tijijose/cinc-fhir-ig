@@ -89,12 +89,12 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
   '   +**interpreterRequired**: boolean
   ' }
 
-  object "<size:18>ECHO assessment\n**:OBSERVATION**" as OBS1 <<FHIR R4B>> #DarkSeaGreen {
+  object "<size:18>ECHO assessment\n**:OBSERVATION**" as OBS1 <<RF profile>> #DarkSeaGreen {
     *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: SNOMED TBC
+    * code: 439238004 <size:10>Echocardiography test interpretation</size>
     ---
     * components 0..*
     \t+value[x]: result or measurement
@@ -102,12 +102,12 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     \t+interpretation: code
   }
 
-  object "<size:18>Jones Criteria\n**:OBSERVATION**" as OBS2 <<FHIR R4B>> #DarkSeaGreen {
+  object "<size:18>Jones Criteria\n**:OBSERVATION**" as OBS2 <<RF profile>> #DarkSeaGreen {
     *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: SNOMED TBC
+    * code: 447541000210107 <size:10>New Zealand Jones Criteria Assessment</size>
     ---
     * components 0..*
     \t+value[x]: result or measurement
@@ -115,12 +115,12 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     \t+interpretation: code
   }
 
-  object "<size:18>Strep primary evidence\n**:OBSERVATION**" as OBS3 <<FHIR R4B>> #DarkSeaGreen {
+  object "<size:18>Strep primary evidence\n**:OBSERVATION**" as OBS3 <<RF profile>> #DarkSeaGreen {
     *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: SNOMED TBC 
+    * code: SNOMED nnnn <size:12>waiting for code</size>
     ---
     * components 0..*
     \t+value[x]: result or measurement
@@ -128,12 +128,12 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     \t+interpretation: code
   }
 
-  object "<size:18>Strep repeat testing\n**:OBSERVATION**" as OBS4 <<FHIR R4B>> #DarkSeaGreen {
+  object "<size:18>Strep repeat testing\n**:OBSERVATION**" as OBS4 <<RF profile>> #DarkSeaGreen {
     *identifier: type #salesforce-observation-id (RFCCS)
     ---
     * status: ""#final""
     * effectiveDateTime: datetime
-    * code: SNOMED TBC 
+    * code: SNOMED nnnn <size:12>waiting for code</size>
     ---
     * components 0..*
     \t+value[x]: result or measurement
@@ -185,9 +185,11 @@ OBS3 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d->
 legend bottom
   This model shows how a rheumatic fever patient's condition and diagnosis are represented in FHIR.
 
-  Note that as FHIR ""Observation"" instances MUST have a code, the IG defines a local CodeSystem 
-  containing NZ-specific codes for the different **categories** of rheumatic fever diagnosis 
-  in NZ secondary prevention.
+  Note that multiple FHIR ""Observation"" instances are used, each representing a logical of 
+  similar diagnosis attributes.
+
+  As FHIR ""Observation"" instances MUST be coded ("".code"") and SNOMED codes will be used for this.
+  The codes valid for use in this design will be specified by an RF profile on the Observation resource.
   
   **Notes** 
   1) Arrows indicate direction of FHIR reference

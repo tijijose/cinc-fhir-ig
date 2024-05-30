@@ -1,7 +1,7 @@
-ValueSet: RheumaticFeverConditionDiagnosisAtRegistrationValueSet
-Id: rf-condition-diagnosisatregistration-code
-Title: "Codes for rheumatic fever condition as diagnosed at patient registration"
-Description:  "This value set defines the codes that represent the possible diagnoses of a patient with rheumatic fever condition at time of registration"
+ValueSet: RheumaticFeverConditionDiagnosisSummaryValueSet
+Id: rf-condition-diagnosis-code
+Title: "Codes for summary diagnosis of the rheumatic fever condition"
+Description:  "This value set defines the codes that summarise the diagnosis of a patient with a rheumatic fever condition"
 * ^version = "1.0.0"
 * ^experimental = false
 * ^status = #active
