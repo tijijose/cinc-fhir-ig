@@ -5,7 +5,9 @@
 ### Profiles
 
 - Added new profile on Observation resource [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)
-- Added descriptions to extension elements to clarify usage in the [Rheumatic Fever Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
+- In the [Rheumatic Fever Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
+  - Added constraint and description on .evidence[] element for linking diagnosis Observations
+  - Added descriptions to extension elements to clarify usage
 
 ### [Examples](artifacts.html#rheumatic-fever-examples)
 

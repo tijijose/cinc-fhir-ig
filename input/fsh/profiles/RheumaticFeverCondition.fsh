@@ -50,10 +50,12 @@ Id: nz-sharedcare-rheumaticfever-condition
 * stage 0..0      // don't need this as there are no formal stage conventions in RF diagnosis
 
 * evidence 0..3
-* evidence ^short = "A maximum of 3 Observation instances are expected to represent RF diagnosis"
+* evidence ^short = "Up to 3 Observation instances may be present (linked) to represent RF diagnosis detail"
 * evidence.code from rf-observation-diagnosisgroup-code (required)
-* evidence.code ^short = "This code identifiers the GROUP of diagnosis data represented by the linked Observation"
+* evidence.code ^short = "Identifies the GROUPing of diagnosis data in the linked Observation instance"
 * evidence.detail only Reference(Observation)
+* evidence.extension 0..0
+* evidence.modifierExtension 0..0
 
 * severity 0..1
 

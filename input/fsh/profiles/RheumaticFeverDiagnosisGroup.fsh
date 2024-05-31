@@ -11,7 +11,7 @@ Id: nz-sharedcare-rheumaticfever-diagnosisgroup
 
 // bind to the permissible SNOMED codes for NZ RF diagnosis groups.
 * code 1..1
-* code ^short = "Must be one of the diagnosis codes"
+* code ^short = "Must be one of the diagnosis group codes"
 * code from rf-observation-diagnosisgroup-code (required)   // see ValueSet
 
 * hasMember 0..1
