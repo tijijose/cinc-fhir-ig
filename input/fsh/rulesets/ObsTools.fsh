@@ -15,6 +15,13 @@ RuleSet: ObservationPresent(code, display, presentNotAbsent)
 * code.coding.display = "{display}"
 * valueBoolean = {presentNotAbsent}
 
+// make a coded observation component with a string value 
+RuleSet: ObservationString(code, display, textString)
+* code.coding.system = $sct
+* code.coding.code = #"{code}"
+* code.coding.display = "{display}"
+* valueString = "{textString}"
+
 // make an coded observation component with a dataAbsentReason of unknown
 RuleSet: ObservationUnknown(code, display)
 * code.coding.system = $sct

@@ -11,6 +11,9 @@
 
 ### [Examples](artifacts.html#rheumatic-fever-examples)
 
+- New detailed diagnosis group examples
+  - [Jones Criteria](Observation-DiagnosisExample-JonesCriteria.html)
+  
 - Madeleine Meringue example patient - changed language code to #en (English) to fix BCP-47 terminology publisher validation problem
 - Pania Punga example patient - changed language code for Maori to #mi to fix BCP-47 terminology publisher validation problem
 

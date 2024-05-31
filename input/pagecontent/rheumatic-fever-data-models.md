@@ -28,7 +28,7 @@ This section provides an overview of the design of the FHIR data representations
 
 #### Secondary prophylaxis appointment planning and recording states model
 
-<div width="70%">
+<div width="50%">
 <!-- Generated from `input/images-source/state-FHIR-rheumaticfever-SPrecordinglifecycles.plantuml` -->
 {% include state-FHIR-rheumaticfever-SPrecordinglifecycles.svg %}
 </div>
