@@ -158,19 +158,25 @@ $Coding(JONESCODING,"Jones criteria SNOMED","#11211002","Migratory polyarthritis
 $Coding(JONESCODING,"Jones criteria SNOMED","#165468009","Erythrocyte sedimentation rate ..")
 $Coding(JONESCODING,"Jones criteria SNOMED","#..\t\t\t","Other Jones criteria..")
 
-$Coding(SEVCODING,"RHD severity SNOMED","#..\t\t\t","TBC")
-$Coding(STREPCODING,"Strep diagnosis SNOMED","#..\t\t\t","TBC")
+$Coding(ECHOCODING,"ECHO assessment item SNOMED","#..\t\t\t","TBC")
+$Coding(STREPCODING,"Strep diagnosis item SNOMED","#..\t\t\t","TBC")
 
 ' positioning
 
 ' connectors
-CAREPLAN ".addresses" --> RFCOND
+CAREPLAN ".addresses\n<size:14>1" ---> "<size:14>1..*" RFCOND
+
+note on link #Yellow
+If diagnosis changes the patient's condition, a new version of the whole
+ structure below is repeated with the revised data representation.
+endnote
+
 
 RFCOND ".encounter" -r-> DENCOUNTER
-RFCOND "stage.assessment[0]" -d-> OBS1
-RFCOND "stage.assessment[1]" -d-> OBS2
-RFCOND "stage.assessment[2]" -d-> OBS3
-OBS3 "hasMember\n1" <-[norank]-> "derivedFrom\n0..1" OBS4
+RFCOND "evidence[0].detail" -d-> "<size:14>1" OBS1
+RFCOND "\nevidence[1].detail" -d-> "<size:14>1" OBS2
+RFCOND "evidence[2].detail" -d-> "<size:14>1" OBS3
+OBS3 "hasMember 1" <-u-> "derivedFrom 0..1" OBS4
 note on link #Yellow
 At most one repeat instance
 per primary Observation
@@ -178,7 +184,7 @@ endnote
 
 DENCOUNTER "\n\n\n<color:MediumPurple><size:14>.serviceType" -[#MediumPurple,dotted]u-> EncContext
 
-OBS1 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> SEVCODING
+OBS1 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> ECHOCODING
 OBS2 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> JONESCODING
 OBS3 "\n<color:MediumPurple><size:14>.component.code" -[#MediumPurple,dotted]d-> STREPCODING
 
@@ -188,8 +194,8 @@ legend bottom
   Note that multiple FHIR ""Observation"" instances are used, each representing a logical of 
   similar diagnosis attributes.
 
-  As FHIR ""Observation"" instances MUST be coded ("".code"") and SNOMED codes will be used for this.
-  The codes valid for use in this design will be specified by an RF profile on the Observation resource.
+  As FHIR ""Observation"" instances MUST be coded ("".code"") and only SNOMED codes defined by
+   a ValueSet will be used for this.
   
   **Notes** 
   1) Arrows indicate direction of FHIR reference
