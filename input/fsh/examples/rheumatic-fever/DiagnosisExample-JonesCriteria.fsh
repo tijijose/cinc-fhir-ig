@@ -7,13 +7,16 @@ Usage: #example
 * meta.versionId = "1"
 * meta.lastUpdated = "2024-05-31T05:00:00Z" // UTC datetime
 
+* identifier[NationalSystem][0] insert SalesforceObservationIdentifier([[OBSD-0101]])     // corresponding salesforce record
+
 * code insert SNOMEDCoding(447541000210107,[[New Zealand Jones Criteria Assessment (observable entity)]])
 
 * subject insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 * status = #final
 * effectiveDateTime = "2023-06-01T02:00:00Z"
 
-* component[0] insert ObservationPresent( 703119002,                   [[Carditis due to rheumatic fever (disorder)]], true)
+// numero zero
+* component[+] insert ObservationPresent( 703119002,                   [[Carditis due to rheumatic fever (disorder)]], true)
 * component[+] insert ObservationPresent( 448021000210106,             [[Indolent carditis (disorder)]],               true)
 * component[+] insert ObservationPresent( 95325000,                    [[Subcutaneous nodule (finding)]],              false)
 * component[+] insert ObservationUnknown( 200951007,                   [[Erythema marginatum in acute rheumatic fever (disorder)]]     )

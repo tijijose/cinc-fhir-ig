@@ -73,7 +73,8 @@ parameters:
   apply-version: false               # stop publisher from overwriting artefact-specific versions
   default-version: true              # versions of canonicals that specify their own version no longer overwritten by the IG publisher
   suppressed-ids: $examples          # stop IG publisher generating ids for all example resource instances
-  display-warnings: true             # stop IG publisher reporting terminology problems as errors
+  display-warnings: true             # Make IG publisher reporting terminology problems as warnings not errors
+  # path-suppressed-warnings: input/ignoreWarnings.txt THIS OPTION DOESN'T WORK
   no-narrative:             #  Suppress narrative so resource content generated ready for seeding 
   - Observation/*
   - CareTeam/*
@@ -303,6 +304,7 @@ groups:
     - CarePlanWithOneAppointmentCompleted
     - CarePlanWithSecondaryProphylaxisPlanned
     - DraftCarePlan
+    - DiagnosisExample-ECHO
     - DiagnosisExample-JonesCriteria
     - Encounter-Diagnosis
     - Encounter-SecondaryProphylaxisAppointment
@@ -322,6 +324,7 @@ groups:
     - SecondaryProphylaxisAugustEncounterBundle
     - SecondaryProphylaxisCareTeam
     - SevereRfConditionExample
+    - SevereRfConditionWithDiagnosisGroups
     
   RheumaticFeverTerminology:
     name: Rheumatic Fever terminology

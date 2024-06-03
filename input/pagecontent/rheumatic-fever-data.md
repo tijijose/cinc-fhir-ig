@@ -52,7 +52,7 @@ Patient language is represented in the `Patient.communication.language` element.
 
 Two character codes in the preferred *CommonLanguages* binding are not sufficient to encode the patient languages available in RFCCS.
 
-Therefore the Te Whatu Ora Shared Care API uses **ISO 639-3 three character language codes** which is allowed by the *AllLanguages* (maximum) binding on [Patient.communication.language](StructureDefinition-nz-sharedcare-rheumaticfever-patient-definitions.html#Patient.communication.language.html).
+Therefore the Te Whatu Ora Shared Care API uses **ISO 639-3 three character language codes** which is allowed by the *AllLanguages* (maximum) binding on [Patient.communication.language](StructureDefinition-nz-sharedcare-rheumaticfever-patient-definitions.html#Patient.communication.language).
 
 The translation between RFCCS language and FHIR is given in the table below. 
 

@@ -1,11 +1,11 @@
-Instance: SevereRfConditionExample
+Instance: SevereRfConditionWithDiagnosisGroups
 InstanceOf: RheumaticFeverCondition
 Usage: #example
-Description: "An example of a rheumatic fever condition as initially diagnosed at registration"
+Description: "An example of a severe rheumatic fever Condition with linked evidence as 3 profiled Observation instances."
 
 * meta.profile = Canonical(RheumaticFeverCondition)
-* meta.versionId = "5"
-* meta.lastUpdated = "2024-05-29T05:45:00Z"
+* meta.versionId = "1"
+* meta.lastUpdated = "2024-06-03T05:45:00Z"
 
 * identifier[NationalSystem][0] insert SalesforceConditionIdentifier([[CON-0206]])     // corresponding salesforce record
 * identifier[NationalSystem][+] insert  EpisurvNumber(21-383414-AK)                    // EPISurv nunber as notified to in diagnosis
@@ -38,3 +38,11 @@ Description: "An example of a rheumatic fever condition as initially diagnosed a
 
 * extension[symptomStatusAtDiagnosis].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-condition-symptomaticAtDiagnosis"
 * extension[symptomStatusAtDiagnosis].valueCoding = $sct#264931009 "Symptomatic (qualifier value)"
+
+// link to the three Observation instances which represent the groups of diagnosis detail
+
+* evidence[+].code insert SNOMEDCoding(439238004,[[Echocardiography test interpretation (observable entity)]])
+* evidence[=].detail = Reference(DiagnosisExample-ECHO)
+
+* evidence[+].code insert SNOMEDCoding(447541000210107,[[New Zealand Jones Criteria Assessment (observable entity)]])
+* evidence[=].detail = Reference(DiagnosisExample-JonesCriteria)

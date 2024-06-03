@@ -25,7 +25,7 @@ Id: nz-sharedcare-rheumaticfever-condition
 
 // This slice allows (0 or more) use=USUAL identifier references for linking to external 'national' systems.  
 
-* identifier[NationalSystem] ^short = "This slice link a rheumatic fever condition instance to its record in the corresponding national system eg. RFCCS"
+* identifier[NationalSystem] ^short = "This identifier is used to sync the FHIR condition instance with its national system (RFCCS) record."
 
 * identifier[NationalSystem].use 1..1
 * identifier[NationalSystem].use = #usual
