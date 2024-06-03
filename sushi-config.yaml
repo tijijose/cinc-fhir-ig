@@ -75,8 +75,9 @@ parameters:
   suppressed-ids: $examples          # stop IG publisher generating ids for all example resource instances
   display-warnings: true             # stop IG publisher reporting terminology problems as errors
   no-narrative:             #  Suppress narrative so resource content generated ready for seeding 
-  - Questionnaire/*
+  - Observation/*
   - CareTeam/*
+  - Questionnaire/*
 
 #   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
@@ -211,7 +212,6 @@ groups:
     - StructureDefinition/ManaakiNgaTahiCondition
     - StructureDefinition/ManaakiNgaTahiDocumentReference
     - StructureDefinition/ManaakiNgaTahiEncounter
-    - StructureDefinition/ManaakiNgaTahiEpisodeOfCare
     - StructureDefinition/ManaakiNgaTahiObservation
     - StructureDefinition/ManaakiNgaTahiPlanDefinition
     - StructureDefinition/ManaakiNgaTahiServiceRequest
