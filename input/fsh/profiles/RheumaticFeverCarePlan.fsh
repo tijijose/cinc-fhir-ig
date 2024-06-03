@@ -75,7 +75,7 @@ Id: nz-sharedcare-rheumaticfever-careplan
 * instantiatesCanonical only Canonical(PlanDefinition)
 
 * period 1..1
-* period ^short = "Start | end values must be in UTC timezone on the FHIR server"
+* period ^short = "Start | end values must be in UTC timezone on the FHIR server" 
 
 * subject only Reference(nz-sharedcare-rheumaticfever-patient)
 
