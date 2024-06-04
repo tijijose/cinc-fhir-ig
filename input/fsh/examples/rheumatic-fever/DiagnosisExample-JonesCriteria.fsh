@@ -13,7 +13,6 @@ Usage: #example
 
 * subject insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 * status = #final
-* effectiveDateTime = "2023-06-01T02:00:00Z"
 
 // numero zero
 * component[+] insert ObservationPresent( 703119002,                   [[Carditis due to rheumatic fever (disorder)]], true)
@@ -32,10 +31,10 @@ Usage: #example
 
 // Raised CRP? / peak CRP measured
 * component[+] insert ObservationPresent( 119971000119104, [[C-reactive protein above reference range (finding)]], true          )
-* component[+] insert ObservationQuantity(55235003,       [[C-reactive protein measurement (procedure)]], 12, [[mg/l]],[[mg/l]] )
+* component[+] insert ObservationQuantity(55235003,       [[C-reactive protein measurement (procedure)]], 12, [[mg/l]],[[mg/L]] )
 
 // PR interval
-* component[+] insert ObservationQuantity(251207006, [[PR interval duration (observable entity)]], 250, [[ms]],[[ms]] )
+* component[+] insert ObservationQuantity(251207006, [[PR interval duration (observable entity)]], 0.250, [[s]],[[s]] )
 * component[+] insert ObservationPresent( 164947007,  [[Prolonged PR interval (finding)]], true )
 
 // fever

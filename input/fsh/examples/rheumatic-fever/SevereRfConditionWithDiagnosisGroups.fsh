@@ -5,7 +5,7 @@ Description: "An example of a severe rheumatic fever Condition with linked evide
 
 * meta.profile = Canonical(RheumaticFeverCondition)
 * meta.versionId = "1"
-* meta.lastUpdated = "2024-06-03T05:45:00Z"
+* meta.lastUpdated = "2024-06-04T02:00:00Z"
 
 * identifier[NationalSystem][0] insert SalesforceConditionIdentifier([[CON-0206]])     // corresponding salesforce record
 * identifier[NationalSystem][+] insert  EpisurvNumber(21-383414-AK)                    // EPISurv nunber as notified to in diagnosis
@@ -46,3 +46,6 @@ Description: "An example of a severe rheumatic fever Condition with linked evide
 
 * evidence[+].code insert SNOMEDCoding(447541000210107,[[New Zealand Jones Criteria Assessment (observable entity)]])
 * evidence[=].detail = Reference(DiagnosisExample-JonesCriteria)
+
+* evidence[+].code insert SNOMEDCoding(448011000210101,[[Evidence of preceding Streptococcus group A infection (observation entity)]])
+* evidence[=].detail = Reference(DiagnosisExample-StrepEvidence)

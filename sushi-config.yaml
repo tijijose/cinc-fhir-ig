@@ -306,6 +306,7 @@ groups:
     - DraftCarePlan
     - DiagnosisExample-ECHO
     - DiagnosisExample-JonesCriteria
+    - DiagnosisExample-StrepEvidence
     - Encounter-Diagnosis
     - Encounter-SecondaryProphylaxisAppointment
     - MadeleineMeringue

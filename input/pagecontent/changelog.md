@@ -14,7 +14,8 @@
 - A new Condition example []() illustrates linking Observations via `evidence[].detail` references.
 - Examples of enhanced diagnosis linked to a Condition
   - [ECHO RHD assessment](Observation-DiagnosisExample-ECHO.html)
-  - [Jones Criteria](Observation-DiagnosisExample-JonesCriteria.html)   
+  - [Jones Criteria](Observation-DiagnosisExample-JonesCriteria.html)
+  - [Strep evidence](Observation-DiagnosisExample-StrepEvidence.html)
 - Madeleine Meringue example patient - changed language code to #en (English) to fix BCP-47 terminology publisher validation problem
 - Pania Punga example patient - changed language code for Maori to #mi to fix BCP-47 terminology publisher validation problem
 

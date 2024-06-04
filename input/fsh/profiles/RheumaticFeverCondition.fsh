@@ -1,20 +1,20 @@
 Profile: RheumaticFeverCondition
 Parent: NzCondition
 Title: "Rheumatic Fever Condition"
-Description: "This profile contains diagnosis code and adds rheumatic heart disease severity and diagnosis certainty extensions to the base NzCondition resource."
+Description: "Extends NzCondition to add classifiers for RHD severity, diagnostic certainty and symptomatic status and specifies groups of diagnosic evidence that can be attached."
 Id: nz-sharedcare-rheumaticfever-condition
 
 * ^version = "1.0.0"
 * ^jurisdiction = urn:iso:std:iso:3166#NZ
-* ^purpose = "Profiles a condition to add severity and diagnostic certainty classifiers and an extra assessment date for capture of NZ rheumatic fever case registration data"
+* ^purpose = "Adds classifiers for severity, diagnostic certainty and symptomatic status and specifies groups of diagnosic evidence to be attached"
 * insert metaContactDetail([[David Grainger]],[[david.grainger@middleware.co.nz]])
 
 // elements modified
 * subject only Reference(Patient)
 * onset[x] only dateTime
 
-* recordedDate ^short = "Date and time (UTC) of diagnosis" 
-* onsetDateTime ^short = "Date and time (UTC) of onset of rheumatic fever"
+* recordedDate ^short = "The date of diagnosis" 
+* onsetDateTime ^short = "The date when rheumatic fever was thought to have begun"
 
 * recorder only Reference(Practitioner)
 
@@ -25,7 +25,7 @@ Id: nz-sharedcare-rheumaticfever-condition
 
 // This slice allows (0 or more) use=USUAL identifier references for linking to external 'national' systems.  
 
-* identifier[NationalSystem] ^short = "This identifier is used to sync the FHIR condition instance with its national system (RFCCS) record."
+* identifier[NationalSystem] ^short = "This stores the identifier of the corresponding record in the national system (RFCCS) to let it be kept in sync with FHIR."
 
 * identifier[NationalSystem].use 1..1
 * identifier[NationalSystem].use = #usual
