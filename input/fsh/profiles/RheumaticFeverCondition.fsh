@@ -13,7 +13,10 @@ Id: nz-sharedcare-rheumaticfever-condition
 * subject only Reference(Patient)
 * recordedDate ^short = "Date and time (UTC) of diagnosis" 
 * onset[x] only dateTime
+
+* recordedDate ^short = "Date and time (UTC) of diagnosis" 
 * onsetDateTime ^short = "Date and time (UTC) of onset of rheumatic fever"
+
 * recorder only Reference(Practitioner)
 
 * identifier ^slicing.discriminator.type = #value

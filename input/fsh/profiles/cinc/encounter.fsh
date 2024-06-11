@@ -7,7 +7,7 @@ Description: "Encounter FHIR resource for Manaaki Nga Tahi"
 * diagnosis.condition only Reference(Condition)
 * participant.individual only Reference(Practitioner)
 * period 1..1
-* period obeys fhir-hnz-period-utc-1
+* period ^short = "Start | end values must be in UTC timezone on the FHIR server"
 * subject only Reference(Patient)
 // elements prohibited
 * account 0..0
