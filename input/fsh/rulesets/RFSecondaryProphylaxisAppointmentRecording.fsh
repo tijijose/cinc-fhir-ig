@@ -3,6 +3,7 @@ RuleSet: makeEncounterContent
 * meta.profile = Canonical(ManaakiNgaTahiEncounter)
 * meta.lastUpdated = "2023-11-27T00:00:00Z"
 
+* id = "1001"
 * status = #finished
 * appointment = Reference(SecondaryProphylaxisAppointment-August-Fulfilled)
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
@@ -28,6 +29,7 @@ RuleSet: makeMedStmtContent
 * meta.profile = Canonical(http://hl7.org.nz/fhir/StructureDefinition/NzMedicationStatement)
 * meta.lastUpdated = "2023-11-27T00:00:00Z"
 
+* id = "1002"
 // set up the contained instance that records lignocaine pain relief medication also given at this appointment
 * contained[0].resourceType = "MedicationStatement"
 * contained[0].id = "contained-Lignocaine-dose"     // special case of setting the id directly instance of via Instance FSH keyword 
@@ -62,6 +64,7 @@ RuleSet: makeQRContent
 * meta.profile = Canonical(QuestionnaireResponse)
 * meta.lastUpdated = "2023-11-27T00:00:00Z"
 
+* id = "1003"
 * status = #completed
 * authored = "2023-08-08T01:08:00.504Z"   // UTC, assumed to be the time of information collection during the appointment
 * questionnaire = Canonical(SecondaryProphylaxisHealthAssessmentQuestionnaire)

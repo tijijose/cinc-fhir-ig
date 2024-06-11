@@ -12,8 +12,10 @@ Description:  "This value set defines codes for standard frequencies of secondar
 
 * $sct#1511000175108 "Every twenty eight days (qualifier value)"
 * $sct#1531000175101 "Every twenty one days (qualifier value)"
-* $sct#3015006 "Trimonthly (qualifier value)"
+// * $sct#3015006 "Trimonthly (qualifier value)"  REMOVED by phase 2 changes
 * $sct#229797004 "Once daily (qualifier value)"
 * $sct#229799001 "Twice a day (qualifier value)"
 * $sct#229798009 "Three times daily (qualifier value)"
 * $sct#307439001 "Four times daily (qualifier value)"
+* $sct#429812001 "Every ten weeks (qualifier value)"
+* $sct#447521000210101 "Every thirteen weeks (qualifier value)"

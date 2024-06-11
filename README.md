@@ -1,4 +1,5 @@
 # cinc-fhir-ig
+
 FHIR Implementation Guide for the Shared Care API including support for:
 
 - Care in the Community COVID-19 care plans
