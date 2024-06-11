@@ -13,13 +13,42 @@ RuleSet: ObservationPresent(code, display, presentNotAbsent)
 * code.coding.system = $sct
 * code.coding.code = #"{code}"
 * code.coding.display = "{display}"
+* code.text = "{display}"
 * valueBoolean = {presentNotAbsent}
 
-// make an coded observation component with a dataAbsentReason of unknown
+// make a coded observation component with a string value 
+RuleSet: ObservationString(code, display, textString)
+* code.coding.system = $sct
+* code.coding.code = #"{code}"
+* code.coding.display = "{display}"
+* code.text = "{display}"
+* valueString = "{textString}"
+
+// make a coded observation component with a string value 
+RuleSet: ObservationDate(code, display, dateTime)
+* code.coding.system = $sct
+* code.coding.code = #"{code}"
+* code.coding.display = "{display}"
+* code.text = "{display}"
+* valueDateTime = {dateTime}
+
+// make a coded observation component with a SNOMED-coded value 
+RuleSet: ObservationCodeableValue(compCode, compDisplay, valueCode, valueDisplay)
+* code.coding.system = $sct
+* code.coding.code = #"{compCode}"
+* code.coding.display = "{compDisplay}"
+* code.text = "{display}"
+* valueCodeableConcept.coding.system = $sct
+* valueCodeableConcept.coding.code = #"{valueCode}"
+* valueCodeableConcept.coding.display = "{valueDisplay}"
+* valueCodeableConcept.text = "{valueDisplay}"
+
+// make an coded observation component for a case where it is unknown if the observation was actually done or what the result was
 RuleSet: ObservationUnknown(code, display)
 * code.coding.system = $sct
 * code.coding.code = #"{code}"
 * code.coding.display = "{display}"
+* code.text = "{display}"
 * dataAbsentReason.coding.system = $obs-dataabsentreason
 * dataAbsentReason.coding.code = #unknown
 * dataAbsentReason.coding.display = "Unknown"
@@ -29,6 +58,7 @@ RuleSet: ObservationQuantity(code, display, mvalue, munit, mcode)
 * code.coding.system = $sct
 * code.coding.code = #"{code}"
 * code.coding.display = "{display}"
+* code.text = "{display}"
 * valueQuantity.value = {mvalue}
 * valueQuantity.unit = "{munit}"
 * valueQuantity.system = $UoM
@@ -39,6 +69,7 @@ RuleSet: ObservationInterpretation(code, display, icode, idisplay)
 * code.coding.system = $sct
 * code.coding.code = #"{code}"
 * code.coding.display = "{display}"
+* code.text = "{display}"
 * interpretation.coding.system = $obs-interpretation
 * interpretation.coding.code = #"{icode}"
 * interpretation.coding.display = "{idisplay}"
@@ -48,6 +79,7 @@ RuleSet: ObservationQuantityAndInterpretation(code, display, mvalue, munit, mcod
 * code.coding.system = $sct
 * code.coding.code = #"{code}"
 * code.coding.display = "{display}"
+* code.text = "{display}"
 * valueQuantity.value = {mvalue}
 * valueQuantity.unit = "{munit}"
 * valueQuantity.system = $UoM

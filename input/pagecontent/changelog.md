@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.4.2 Rheumatic Fever phase 2 part 2 (June 2024)
+
+### Profiles
+
+- Added new profile on Observation resource [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)
+- In the [Rheumatic Fever Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
+  - Added constraint and description on .evidence[] element for linking diagnosis Observations
+  - Added descriptions to extension elements to clarify usage
+
+### [Examples](artifacts.html#rheumatic-fever-examples)
+
+- A new Condition example []() illustrates linking Observations via `evidence[].detail` references.
+- Examples of enhanced diagnosis linked to a Condition
+  - [ECHO RHD assessment](Observation-DiagnosisExample-ECHO.html)
+  - [Jones Criteria](Observation-DiagnosisExample-JonesCriteria.html)
+  - [Strep evidence](Observation-DiagnosisExample-StrepEvidence.html)
+- Madeleine Meringue example patient - changed language code to #en (English) to fix BCP-47 terminology publisher validation problem
+- Pania Punga example patient - changed language code for Maori to #mi to fix BCP-47 terminology publisher validation problem
+
+### Terminology
+
+- Added a new [ValueSet](ValueSet-rf-observation-diagnosisgroup-code.html) to constrain SNOMED codes used on [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)s
+- Improved Terminology Overview page
+
+### Miscellany
+
+- Changed date values to *dateTime* datatype in elements that need to be accurately convert to/from UTC representation
+- Publisher-generated narrative text suppressed in canonical Questionnaires and CareTeam
+
+---
+
 ## v0.4.0 Rheumatic Fever phase 2 part 1 (May 2024)
 
 ### [Data model designs](rheumatic-fever-data-models.html)
@@ -48,7 +79,6 @@ These examples have been adjusted to correctly reflect the Taranaki RF SP servic
 
 #### Miscellaneous
 
-- Added new example of Observation resource illustrating [Jones Criteria](Observation-JonesCriteriaObservationExample.html) components
 - Added a new example [Diagnosis Encounter](Encounter-Encounter-Diagnosis.html) capturing representing context and locations of RF diagnosis.
 
 ### Consent (2024-05-07)
@@ -83,9 +113,9 @@ Updated [AntiviralEligibilityQuestionnaire](Questionnaire-AntiViralEligibilityQu
 
 - Added [state transition diagrams](rheumatic-fever-data-models.html#secondary-prophylaxis-appointment-planning-and-recording-states-model) for the expected states of secondary prophylaxis resources.
 
-- Update to existing diagram illustrating [appointment planning and recording](rheumatic-fever-data-models.html#Secondary-prophylaxis-medication-planning-and-encounter-recording) the number of planned Appointments has been reduced to one.
+- Update to existing diagram illustrating [appointment planning and recording](rheumatic-fever-data-models.html#secondary-prophylaxis-medication-planning-and-encounter-recording) the number of planned Appointments has been reduced to one.
 
-- Developer guidance expanded about validation of [resources using versioned profiles](developerGuide.html#fhir-profile-versioning)
+- Developer guidance expanded about validation of [resources using versioned profiles](developerGuide.html#fhir-resource-profile-based-validation)
 
 ## v0.3.8 (2024-02-02)
 

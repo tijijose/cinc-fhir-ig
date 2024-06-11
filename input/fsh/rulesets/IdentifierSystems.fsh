@@ -45,6 +45,15 @@ RuleSet: SalesforceCareTeamIdentifier(salesforce-id)
 * type = $ExternalIdentifierTypeCS#salesforce-careteam-id
 
 
+// sets up ref to an external identifier as the specified salesforce care team object id
+RuleSet: SalesforceObservationIdentifier(salesforce-id)
+
+* system = "https://developer.salesforce.com/docs"      // this is just an example and probably incorrect
+* value = "{salesforce-id}"
+* use = #usual
+* type = $ExternalIdentifierTypeCS#salesforce-observation-id
+
+
 RuleSet: EpisurvNumber(episurv-id)
 // sets up a USUAL identifier to hold an external (salesforce) identifier of an object
 

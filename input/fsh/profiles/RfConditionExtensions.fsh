@@ -21,7 +21,7 @@ Id:  rf-condition-assessmentdate
 Title: "Date of assessment of rheumatic heart disease severity"
 Description: "Tracks the RF-specific date when rheumatic heart disease severity was assessed."
 Context: Condition
-* value[x] only date
+* value[x] only dateTime
 
 
 Extension: RfConditionSymptomaticAtDiagnosisExtension

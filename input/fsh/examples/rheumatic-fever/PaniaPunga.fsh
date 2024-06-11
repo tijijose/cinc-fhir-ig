@@ -39,7 +39,7 @@ Description: "An example rheumatic fever patient who is Māori ethnicity and spe
 * birthDate = "2004-12-21"
 
 * communication[0].language.coding[0].system = "urn:ietf:bcp:47"
-* communication[0].language.coding[0].code = #mao
+* communication[0].language.coding[0].code = #mi
 * communication[0].language.coding[0].display = "Māori"
 
 * deceasedBoolean = false

@@ -3,3 +3,12 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# These term are being / have been defined in NZ SNOMED edition but do not yet appear in tx.fhir.org
+ERROR: Unknown code '299151000210101' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/900000000000207008/version/20230901' (from http://tx.fhir.org/r4)
+ERROR: Unknown code '320721000210102' in the CodeSystem 'http://snomed.info/sct' %
+ERROR: Unknown code '447541000210107' in the CodeSystem 'http://snomed.info/sct' %
+ERROR: Unknown code '320741000210108' in the CodeSystem 'http://snomed.info/sct' %
+
+# Publisher generation of HTML narrative has been deliberately suppressed for some resource types
+WARNING: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)

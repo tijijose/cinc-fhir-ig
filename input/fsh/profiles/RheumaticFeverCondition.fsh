@@ -1,21 +1,20 @@
 Profile: RheumaticFeverCondition
 Parent: NzCondition
 Title: "Rheumatic Fever Condition"
-Description: "This profile contains diagnosis code and adds rheumatic heart disease severity and diagnosis certainty extensions to the base NzCondition resource."
+Description: "Extends NzCondition to add classifiers for RHD severity, diagnostic certainty and symptomatic status and specifies groups of diagnosic evidence that can be attached."
 Id: nz-sharedcare-rheumaticfever-condition
 
-* ^version = "1.1.0"
+* ^version = "1.0.0"
 * ^jurisdiction = urn:iso:std:iso:3166#NZ
-* ^purpose = "Profiles a condition to add severity and diagnostic certainty classifiers and an extra assessment date for capture of NZ rheumatic fever case registration data"
+* ^purpose = "Adds classifiers for severity, diagnostic certainty and symptomatic status and specifies groups of diagnosic evidence to be attached"
 * insert metaContactDetail([[David Grainger]],[[david.grainger@middleware.co.nz]])
 
 // elements modified
 * subject only Reference(Patient)
-* recordedDate ^short = "Date and time (UTC) of diagnosis" 
 * onset[x] only dateTime
 
-* recordedDate ^short = "Date and time (UTC) of diagnosis" 
-* onsetDateTime ^short = "Date and time (UTC) of onset of rheumatic fever"
+* recordedDate ^short = "The date of diagnosis" 
+* onsetDateTime ^short = "The date when rheumatic fever was thought to have begun"
 
 * recorder only Reference(Practitioner)
 
@@ -26,7 +25,7 @@ Id: nz-sharedcare-rheumaticfever-condition
 
 // This slice allows (0 or more) use=USUAL identifier references for linking to external 'national' systems.  
 
-* identifier[NationalSystem] ^short = "This slice link a rheumatic fever condition instance to its record in the corresponding national system eg. RFCCS"
+* identifier[NationalSystem] ^short = "This stores the identifier of the corresponding record in the national system (RFCCS) to let it be kept in sync with FHIR."
 
 * identifier[NationalSystem].use 1..1
 * identifier[NationalSystem].use = #usual
@@ -45,10 +44,20 @@ Id: nz-sharedcare-rheumaticfever-condition
 * identifier[NationalSystem].id 0..0       // don't want this kind of thing
 * identifier[NationalSystem].extension 0..0       // don't want this kind of thing
 
-// bind to the permissible SNOMED codes for RF diagnosis at registration.
+// bind to the permissible SNOMED codes for NZ RF diagnosis.
 * code 1..1
-* code ^short = "Must be one of the diagnosis at registration codes"
-* code from rf-condition-diagnosisatregistration-code (required)
+* code ^short = "Must be one of the diagnosis codes"
+* code from rf-condition-diagnosis-code (required)
+
+* stage 0..0      // don't need this as there are no formal stage conventions in RF diagnosis
+
+* evidence 0..3
+* evidence ^short = "Up to 3 Observation instances may be present (linked) to represent RF diagnosis detail"
+* evidence.code from rf-observation-diagnosisgroup-code (required)
+* evidence.code ^short = "Identifies the GROUPing of diagnosis data in the linked Observation instance"
+* evidence.detail only Reference(Observation)
+* evidence.extension 0..0
+* evidence.modifierExtension 0..0
 
 * severity 0..1
 
@@ -63,6 +72,7 @@ Id: nz-sharedcare-rheumaticfever-condition
   RfConditionSymptomaticAtDiagnosisExtension named symptomStatusAtDiagnosis 0..1
 
 * extension[assessmentDate] ^short = "date (UTC) of RHD severity assessment"
+* extension[diagnosticCertainty] ^short = "This certainty code value must be interpreted in conjunction with the patient's diagnosis in Condition.code"
 
 // elements prohibited
 * implicitRules 0..0

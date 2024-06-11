@@ -5,15 +5,18 @@ This page provides an overview of the terminology systems that are depended on, 
 The Rheumatic Fever FHIR resources make use of established SNOMED (International and NZ Editions) and NZMT (New Zealand Medication Terminology) codesystems, and defines new terminology needed to code the certainty of a rheumatic fever diagnosis.
 
 
-### New terminology for severity and certainty of rheumatic fever diagnosis
+### NZ terminology for rheumatic fever diagnosis
 
-This IG introduces new terminology (a CodeSystem and ValueSet) defining the possible values of **severity** and **certainty** of a **rheumatic fever diagnosis**.  This terminology is specific to and important for NZ's care of patients with rheumatic fever.
+This IG introduces new terminology (CodeSystems and ValueSets) to cover four specific aspects of New Zealand rheumatic fever patient conditions which need to be accurately represented.
 
-The terminology is used two coded *extensions* to the FHIR `Condition` resource type.  See *Rheumatic Fever Condition* in the Profiles section.
+1. **summary diagnosis** of a rheumatic fever condition
+1. **severity** of rheumatic fever condition
+1. **certainty** of rheumatic fever diagnosis
+1. **symptomatic status at diagnosis** of rheumatic fever
 
-These new codes are published for the time being in this IG.
+The new terminology is used in a binding on `Condition.code` and by three *extensions* to `Condition` (see the [Rheumatic Fever Condition structure definition](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)).
 
-In future it is anticipated that the New Zealand Health Terminology Server (NZHTS) will host the official published versions however there are currently problems with this meaning clients cannot expand ValueSets for [DiagnosticCertainty](https://nzhts.digital.health.nz/fhir/ValueSet/$expand?url=https://nzhts.digital.health.nz/fhir/ValueSet/rheumatic-fever-Diagnostic-Certainty) or [RHD severity](https://nzhts.digital.health.nz/fhir/ValueSet/$expand?url=https://nzhts.digital.health.nz/fhir/ValueSet/rheumatic-fever-rheumatic-heart-disease-severity).
+Diagnosis detail data is captured in groups in `Observation` instances (one Observation per diagnosis logical group) and further [ValueSet](ValueSet-rf-observation-diagnosisgroup-code.html) in this IG defines the valid SNOMED codes for this purpose.
 
 ### New SNOMED-based ValueSets
 

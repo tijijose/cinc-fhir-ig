@@ -41,13 +41,6 @@ Id: nz-sharedcare-rheumaticfever-careteam
 * identifier[NationalSystem].id 0..0       // don't want this kind of thing
 * identifier[NationalSystem].extension 0..0       // don't want this kind of thing
 
-
-// * category from https://nzhts.digital.health.nz/fhir/ValueSet/rheumatic-fever-care-team-category
-// The category code is defined in the above ValueSet on NZHTS but there are problems relating to the 
-// fact that the code is in a temporary codesystem while we wait for SNOMED NZ edition April 2024 to roll around
-// So for now, this profile requires that the canonical ValueSet will be the one defined in this IG
-
-* category from rf-careteam-category-code (required)
 * category = $sct#320741000210108 "Secondary prophylaxis team"
 
 // elements from base profile prohibited - NONE

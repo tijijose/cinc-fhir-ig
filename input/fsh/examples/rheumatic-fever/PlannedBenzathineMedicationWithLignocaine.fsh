@@ -31,8 +31,8 @@ Usage: #example
 * extension[medicationFrequency].url = Canonical(rf-medicationrequest-medicationfrequency)
 * extension[medicationFrequency].valueCoding = $sct#1511000175108 "Every twenty eight days (qualifier value)"
 
-* dispenseRequest.validityPeriod.start = "2023-08-01"
-* dispenseRequest.validityPeriod.end = "2026-07-31"
+* dispenseRequest.validityPeriod.start = "2023-08-01T00:12:00Z"
+* dispenseRequest.validityPeriod.end = "2026-07-31T00:12:00Z"
 
 * contained[0] = contained-Lignocaine  // contained resource represents planned lignocaine pain relief
 

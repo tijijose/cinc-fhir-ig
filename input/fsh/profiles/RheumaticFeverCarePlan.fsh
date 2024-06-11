@@ -26,7 +26,10 @@ Id: nz-sharedcare-rheumaticfever-careplan
 // The category code is defined in a ValueSet on NZHTS but there are problems relating to the 
 // fact that the code is in a temporary codesystem while we wait for SNOMED NZ edition April 2024 to roll around
 // So for now, this profile requires that the canonical ValueSet will be the one defined in this IG
-* category from rf-careplan-category-code (required)
+// * category from rf-careplan-category-code (required)
+
+// May 29 2024 deleted one code ValueSet and fixed the category code here in profile
+* category = $sct#320721000210102 "Rheumatic fever secondary prevention care plan"
 
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "use"
