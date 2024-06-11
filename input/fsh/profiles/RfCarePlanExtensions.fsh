@@ -12,3 +12,10 @@ Description: "Captures why a rheumatic fever patient care has been placed on hol
 //Context: RheumaticFeverCarePlan
 Context: CarePlan
 * value[x] only string
+
+Extension: RfCarePlanLifelongSecondaryProphylaxisExtension
+Id:  rf-careplan-lifelongSecondaryProphylaxis
+Title: "Lifelong secondary prophylaxis recommended?"
+Description: "Indicates that a rheumatic fever patient has been recommended lifelong prophylaxis"
+Context: CarePlan
+* value[x] only boolean

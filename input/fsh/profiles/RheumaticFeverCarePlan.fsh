@@ -83,8 +83,14 @@ Id: nz-sharedcare-rheumaticfever-careplan
 
 // extensions
 * extension contains
-  RfCarePlanOnHoldReasonExtension named onHoldReason 0..1 and
+  RfCarePlanOnHoldReasonExtension named onHoldReason 0..1 
+    and
   RfCarePlanClosureReasonExtension named closureReason 0..1
+    and
+  RfCarePlanLifelongSecondaryProphylaxisExtension named lifelongSecondaryProphylaxis 0..1
+
+* extension[lifelongSecondaryProphylaxis] ^short = "Indicates that a rheumatic fever patient has been recommended lifelong prophylaxis"
+
 
 // elements prohibited
 * activity.detail 0..0

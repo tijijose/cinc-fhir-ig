@@ -38,3 +38,4 @@ Description: "An example of a rheumatic fever condition as initially diagnosed a
 
 * extension[symptomStatusAtDiagnosis].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-condition-symptomaticAtDiagnosis"
 * extension[symptomStatusAtDiagnosis].valueCoding = $sct#264931009 "Symptomatic (qualifier value)"
+

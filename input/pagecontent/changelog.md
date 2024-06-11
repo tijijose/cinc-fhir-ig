@@ -5,7 +5,9 @@
 ### Profiles
 
 - Added new profile on Observation resource [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)
-- In the [Rheumatic Fever Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
+- In the [rheumatic fever CarePlan profile](StructureDefinition-nz-sharedcare-rheumaticfever-careplan.html)
+  - Added new boolean extension to indicate lifelong secondary prophylaxis
+- In the [rheumatic Fever Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
   - Added constraint and description on .evidence[] element for linking diagnosis Observations
   - Added descriptions to extension elements to clarify usage
 
@@ -16,6 +18,7 @@
   - [ECHO RHD assessment](Observation-DiagnosisExample-ECHO.html)
   - [Jones Criteria](Observation-DiagnosisExample-JonesCriteria.html)
   - [Strep evidence](Observation-DiagnosisExample-StrepEvidence.html)
+- The various example `CarePlan`s now illustrate use of the **lifelong secondary prophylaxis** extension
 - Madeleine Meringue example patient - changed language code to #en (English) to fix BCP-47 terminology publisher validation problem
 - Pania Punga example patient - changed language code for Maori to #mi to fix BCP-47 terminology publisher validation problem
 

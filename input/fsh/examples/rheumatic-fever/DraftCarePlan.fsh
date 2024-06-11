@@ -33,6 +33,9 @@ Description: "Example of an RF care plan where setup is complete but no secondar
 * supportingInfo[+] = Reference(MedicationsAndFollowUpGuidanceQuestionnaireResponse)    // ****
 * supportingInfo[+] = Reference(PatientWhanauGoalsPreferencesQuestionnaireResponse)     // ****
 
+* extension[lifelongSecondaryProphylaxis].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-careplan-lifelongSecondaryProphylaxis"
+* extension[lifelongSecondaryProphylaxis].valueBoolean = false
+
 // * extension[0].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-careplan-onhold-reason"
 // * extension[=].valueString = "Patient on holiday overseas"
 

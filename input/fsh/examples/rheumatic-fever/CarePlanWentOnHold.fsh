@@ -36,8 +36,11 @@ Description: "Example of an RF care plan that has gone on-hold, after the first 
 * supportingInfo[+] = Reference(PatientWhanauGoalsPreferencesQuestionnaireResponse)
 * supportingInfo[+] = Reference(RFPatientHealthAssessmentQuestionnaireResponse)       //  *****
 
-* extension[0].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-careplan-onhold-reason"
-* extension[=].valueString = "Patient has gone on big OE"
+* extension[lifelongSecondaryProphylaxis].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-careplan-lifelongSecondaryProphylaxis"
+* extension[lifelongSecondaryProphylaxis].valueBoolean = false
+
+* extension[onHoldReason].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-careplan-onhold-reason"
+* extension[onHoldReason].valueString = "Patient has gone on the big OE"
 
 // * extension[+].url = "https://build.fhir.org/ig/tewhatuora/cinc-fhir-ig/StructureDefinition/rf-careplan-closure-reason"
 // * extension[=].valueString = "Patient left New Zealand"
