@@ -16,3 +16,22 @@ Id: nz-sharedcare-rheumaticfever-medicationrequest
 * extension[medicationFrequency] ^short = "Sets a standard interval between RF sceondary prophylaxis medication appointments."
 
 // elements from base profile prohibited - NONE
+
+* dosageInstruction.route ^definition = """The planned route for secondary prophylaxis medication delivery is typically one of the following (SNOMED):
+- *Intramuscular Injection* 78421000 Intramuscular route (qualifier value)
+- *Oral Administration* 26643006 Oral route (qualifier value)
+- *Subcutaneous Injection* 34206005 Subcutaneous route (qualifier value)
+"""
+
+* dosageInstruction.site ^definition = """The planned site for secondary prophylaxis medication delivery are expected to be one of the following (SNOMED):
+- *Ventrogluteal* | 78333006 | Structure of gluteus medius muscle (body structure)
+- *Dorsogluteal* | 206007 | Structure of gluteus maximus muscle (body structure)
+- *Vastus lateralis* | 1403006 | Structure of vastus lateralis muscle (body structure)
+- *Abdomen* | 42972002 |  Subcutaneous tissue structure of anterior abdominal wall (body structure)
+"""
+
+* dosageInstruction.extension 0..0
+* dosageInstruction.modifierExtension 0..0
+* dosageInstruction.sequence 0..0
+* dosageInstruction.method 0..0
+* dosageInstruction.asNeeded[x] 0..0

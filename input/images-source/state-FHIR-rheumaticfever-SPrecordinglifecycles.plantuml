@@ -2,8 +2,8 @@
 
 title "Secondary prophylaxis recording: FHIR instance lifecycles"
 
-skinparam dpi 400
-scale 400 width
+skinparam dpi 200
+scale 300 width
 
 skinparam BoxPadding 10
 skinparam ParticipantPadding 5

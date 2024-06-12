@@ -72,7 +72,7 @@ package "Activity resources in the CarePlan" as Activities #Snow {
   }
 
   object "August 2023 (latest) appointment\n:**APPOINTMENT**" as AUGUST_APPT #Red {
-    *identifier: type #salesforce-careplanactivity-id (RFCCS)
+    *identifier: type #salesforce-careplanactivity-id
     ---
     * status: ""**#fulfilled**""
     * start: ""2023-08-08""
@@ -81,7 +81,7 @@ package "Activity resources in the CarePlan" as Activities #Snow {
   }
   
   object "next appointment (planned encounter)\n:**APPOINTMENT**" as FUTURE_APPT #Red {
-    *identifier: type #salesforce-careplanactivity-id (RFCCS)
+    *identifier: type #salesforce-careplanactivity-id
     ---
     * status: ""**#booked**""
     * start: ""2023-09-05""
@@ -97,7 +97,7 @@ package "Activity resources in the CarePlan" as Activities #Snow {
 
 
 object "August 2023 encounter\n:**ENCOUNTER**" as EInj1 #yellow {
-  *identifier: type #salesforce-clinicalencounter-id (RFCCS)
+  *identifier: type #salesforce-clinicalencounter-id
   ---
   * status: ""#finished""
   * class: ""#AMB""
@@ -135,25 +135,26 @@ object "benzathine\n:**MEDICATION**" as MED #GhostWhite {
 
 $Quantity(BDOSE,"benzathine dose planned","25","mg")
 
-$Coding(Route,"Medication route","SNOMED #78421000","Intramuscular route")
-$Coding(Route,"Medication route","SNOMED #26643006","Oral route")
+$Coding(Route,"Medication route (SNOMED)","#78421000","Intramuscular route")
+$Coding(Route,"Medication route (SNOMED)","#26643006","Oral route")
+$Coding(Route,"Medication route (SNOMED)","#34206005","Subcutaneous route")
 
-$Coding(Site,"Medication site","SNOMED #78333006","Ventrogluteal")
-$Coding(Site,"Medication site","SNOMED #206007","Dorsogluteal")
-$Coding(Site,"Medication site","SNOMED #1403006","Vastus lateralis")
+$Coding(Site,"Medication site (SNOMED)","#78333006","Ventrogluteal")
+$Coding(Site,"Medication site (SNOMED)","#206007","Dorsogluteal")
+$Coding(Site,"Medication site (SNOMED)","#1403006","Vastus lateralis")
 
-$Coding(MedIngr,"medication ingredient","NZMT ..6105","benzathine penicillin")
-$Coding(MedIngr,"medication ingredient","NZMT ..6107","amoxicillin")
-$Coding(MedIngr,"medication ingredient","NZMT ..6109","penicillin VK")
-$Coding(MedIngr,"medication ingredient","NZMT ..6100","erythromycin")
+$Coding(MedIngr,"medication ingredient NZMT","..6105","benzathine penicillin")
+$Coding(MedIngr,"medication ingredient NZMT","..6107","amoxicillin")
+$Coding(MedIngr,"medication ingredient NZMT","..6109","penicillin VK")
+$Coding(MedIngr,"medication ingredient NZMT","..6100","erythromycin")
 
-$Coding(MedBrand,"Benzathine brand","NZMT ..6108","Bicillin L-A")
-$Coding(MedBrand,"Benzathine brand","NZMT tbc",   "Tardocillin")
-$Coding(MedBrand,"Benzathine brand","NZMT tbc",   "Lentocillin")
+$Coding(MedBrand,"Benzathine brand NZMT","..6108","Bicillin L-A")
+$Coding(MedBrand,"Benzathine brand NZMT","tbc",   "Tardocillin")
+$Coding(MedBrand,"Benzathine brand NZMT","tbc",   "Lentocillin")
 
-$Coding(LIGNOCODE,"lignocaine strength","NZMT 1074...6105", "lidocaine hydrochloride anhydrous 0.5%" )
-$Coding(LIGNOCODE,"lignocaine strength","NZMT 1074...6110", "lidocaine hydrochloride anhydrous 1%" )
-$Coding(LIGNOCODE,"lignocaine strength","NZMT 1074...6101", "lidocaine hydrochloride anhydrous 2%" )
+$Coding(LIGNOCODE,"lignocaine strength NZMT","1074...6105", "lidocaine hydrochloride anhydrous 0.5%" )
+$Coding(LIGNOCODE,"lignocaine strength NZMT","1074...6110", "lidocaine hydrochloride anhydrous 1%" )
+$Coding(LIGNOCODE,"lignocaine strength NZMT","1074...6101", "lidocaine hydrochloride anhydrous 2%" )
 
 $Quantity(LDOSE,"lignocaine dose planned","0.5","ml")
 
@@ -164,15 +165,15 @@ $Quantity(LDOSE,"lignocaine dose planned","0.5","ml")
 
 MR1 "contained" -d-* MRinner
 MEDSTMTinner *-[norank]- "contained" MEDSTMT1 
-MEDSTMTinner  -[#MediumPurple,dotted,norank]--> LIGNOCODE : medicationCodeableConcept
-MRinner "\n<color:Purple>.medicationCodeableConcept" -[#MediumPurple,dashed]d--> LIGNOCODE
+MEDSTMTinner  -[#MediumPurple,dotted,norank]--> LIGNOCODE : ".medicationCodeableConcept"
+MRinner "\n\n<color:Purple>.medication\nCodeable\nConcept" -[#MediumPurple,dashed]d--> LIGNOCODE
 MRinner "\n<color:DimGray>.Dosage\n.doseAndRate" -[dashed]d-> LDOSE
 MRinner "basedOn" -[thickness=3,norank]-> MR1
 
 EInj1 <-[norank]l- MEDSTMT1: < context
 
 ' MEDSTMT1 "derivedFrom" -d-> QR1
-QR1 "encounter" -> EInj1
+QR1 "encounter" -u--> EInj1
 
 AUGUST_APPT "supportingInfo" -d-> EInj1
 EInj1 "appointment" -[thickness=3,norank]u--> AUGUST_APPT
@@ -183,12 +184,12 @@ MR1  -[dashed]u-> "<color:DimGray><size:14>Dosage.doseAndRate" BDOSE
 MR1 -[norank]r-> MED : > medicationReference
 
 MEDSTMT1 "basedOn" -[thickness=3]r-> MR1
-MEDSTMT1 -[norank]r-> MED : > medicationReference
+MEDSTMT1 -> MED : > medicationReference
 
 MEDSTMTinner "basedOn" -[thickness=3]r-> MRinner
 
+MED "<color:Purple>code" .[#MediumPurple]u.> MedBrand
 MED "<color:Purple>\ningredient" .[#MediumPurple].> MedIngr
-MED "<color:Purple>code" .[#MediumPurple].> MedBrand
 
 'notes
 ' note as N1

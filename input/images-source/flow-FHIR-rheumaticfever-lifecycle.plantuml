@@ -2,7 +2,7 @@
 
 title "Typical sequence of rheumatic fever FHIR resource instance creation"
 
-skinparam dpi 400
+skinparam dpi 200
 scale 400 width
 
 skinparam BoxPadding 10
