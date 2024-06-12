@@ -4,7 +4,9 @@ Description: "Example of a teenager patient who is NZ European ethnicity but spe
 Usage: #example
 
 * meta.profile = Canonical(RheumaticFeverPatient|1.0.0)
-* meta.versionId = "2"
+* meta.versionId = "3"
+* meta.lastUpdated = "2024-05-29T06:00:00Z"
+
 
 * extension[interpreterRequired].url = "http://hl7.org/fhir/StructureDefinition/patient-interpreterRequired"
 * extension[interpreterRequired].valueBoolean = false

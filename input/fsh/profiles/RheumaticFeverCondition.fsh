@@ -13,8 +13,8 @@ Id: nz-sharedcare-rheumaticfever-condition
 * subject only Reference(Patient)
 * onset[x] only dateTime
 
-* recordedDate ^short = "The date of diagnosis" 
-* onsetDateTime ^short = "The date when rheumatic fever was thought to have begun"
+* recordedDate ^short = "The date (UTC dateTime) of diagnosis" 
+* onsetDateTime ^short = "The date (UTC dateTime) when rheumatic fever was thought to have begun"
 
 * recorder only Reference(Practitioner)
 
@@ -71,7 +71,7 @@ Id: nz-sharedcare-rheumaticfever-condition
     and
   RfConditionSymptomaticAtDiagnosisExtension named symptomStatusAtDiagnosis 0..1
 
-* extension[assessmentDate] ^short = "date (UTC) of RHD severity assessment"
+* extension[assessmentDate] ^short = "date (dateTime value in UTC timezone) of RHD severity assessment"
 * extension[diagnosticCertainty] ^short = "This certainty code value must be interpreted in conjunction with the patient's diagnosis in Condition.code"
 
 // elements prohibited

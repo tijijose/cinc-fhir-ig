@@ -4,8 +4,8 @@ Usage: #example
 Description: "Example of the most basic RF care plan: not fully setup and indicates only that a patient registered with RF service."
 
 * meta.profile = Canonical(RheumaticFeverCarePlan|1.0.0)
-* meta.versionId = "2"
-* meta.lastUpdated = "2023-11-07T04:00:00Z"
+* meta.versionId = "3"
+* meta.lastUpdated = "2024-06-12T06:00:00Z"
 
 * identifier[NHI] insert NHIIdentifier(SCF7824)
 * identifier[NationalSystem][0] insert SalesforceCarePlanIdentifier(00073693)
@@ -18,9 +18,10 @@ Description: "Example of the most basic RF care plan: not fully setup and indica
 
 * intent = #plan
 
-* created = "2023-06-12"
-* period.start = "2023-08-01"
-* period.end = "2033-07-31"
+* created       = "2023-06-12T00:00:00Z"    // UTC equivalent of midday NZ time (depend on the season)
+* period.start  = "2023-08-01T00:00:00Z"    // UTC equivalent of midday NZ time (depend on the season)
+* period.end    = "2033-07-31T00:00:00Z"    // UTC equivalent of midday NZ time (depend on the season)
+
 * status = #draft
 
 * insert PatientInstanceReference(subject,MadeleineMeringue)
