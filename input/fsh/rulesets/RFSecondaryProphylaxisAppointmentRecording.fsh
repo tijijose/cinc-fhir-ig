@@ -22,6 +22,7 @@ RuleSet: makeEncounterContent
 * location.location.display = "PHNs Whangarei"
 
 * serviceProvider insert ReferenceOrganisation(G0M086-B,[[Te Tai Tokerau Rheumatic Fever Secondary Prevention Service]])
+* serviceType = $sct#360271000 "Prophylaxis - procedure intent (qualifier value)" 
 
 // MedicationStatement: benzathine medication and associated lignocaine pain relief
 RuleSet: makeMedStmtContent

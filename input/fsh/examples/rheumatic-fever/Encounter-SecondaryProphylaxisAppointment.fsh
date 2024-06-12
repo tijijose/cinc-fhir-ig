@@ -28,4 +28,5 @@ Description: "Example of a rheumatic fever patient/lead provider encounter for d
 * location.location.display = "PHNs Whangarei"
 
 * serviceProvider insert ReferenceOrganisation(G0M086-B,[[Te Tai Tokerau Rheumatic Fever Secondary Prevention Service]])
+* serviceType = $sct#360271000 "Prophylaxis - procedure intent (qualifier value)" 
 

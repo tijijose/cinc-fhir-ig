@@ -4,8 +4,8 @@ Description: "Example of a fulfilled (completed) patient appointment for rheumat
 Usage: #example
 
 * meta.profile = Canonical(Appointment)
-* meta.versionId = "2"
-* meta.lastUpdated = "2023-11-09T05:00:00Z"
+* meta.versionId = "3"
+* meta.lastUpdated = "2024-06-12T07:00:00Z"
 
 * description = "monthly injection August 2023"
 
@@ -15,6 +15,8 @@ Usage: #example
 * end =   "2023-08-08T03:00:00Z"      //  UTC equivalent of a finish time of 3pm NZ Standard Time on August 8th 2023
 
 * status = #fulfilled
+
+* serviceType = $sct#360271000 "Prophylaxis - procedure intent (qualifier value)" 
 
 * participant[0].actor insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 * participant[=].status = #accepted

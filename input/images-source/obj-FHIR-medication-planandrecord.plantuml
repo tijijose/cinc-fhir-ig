@@ -75,7 +75,8 @@ package "Activity resources in the CarePlan" as Activities #Snow {
     *identifier: type #salesforce-careplanactivity-id
     ---
     * status: ""**#fulfilled**""
-    * start: ""2023-08-08""
+    * start: ""2023-08-08T00:00:00Z""
+    * **serviceType** $sct#360271000 "Prophylaxis"
     * supportingInfo: service provider Ref(HPI org)
     * participant: Reference(Practitioner)
   }
@@ -84,7 +85,8 @@ package "Activity resources in the CarePlan" as Activities #Snow {
     *identifier: type #salesforce-careplanactivity-id
     ---
     * status: ""**#booked**""
-    * start: ""2023-09-05""
+    * start: ""2023-09-05T00:00:00Z""
+    * **serviceType** $sct#360271000 "Prophylaxis"
     * supportingInfo: service provider Ref(HPI org)
     * participant: Reference(Practitioner)
   }
@@ -101,21 +103,22 @@ object "August 2023 encounter\n:**ENCOUNTER**" as EInj1 #yellow {
   ---
   * status: ""#finished""
   * class: ""#AMB""
-  * period.start: 2023-08-08
+  * **serviceType** $sct#360271000 "Prophylaxis"
+  * period.start: ""2023-08-08T00:00:00Z""
   * participant: Ref(Practitioner)
   * serviceProvider: Ref(Organisation)
 }
 
 object "August 2023 benzathine given\n:**MEDICATIONSTATEMENT**" as MEDSTMT1 #LightGreen {
   * status: //**#completed**//
-  * effectiveDateTime: 2023-08-08
+  * effectiveDateTime: ""2023-08-08T00:00:00Z""
   * dosage: Dosage 
     // actual dose quantity,site,route
 }
 
 object "August 2023 pain relief given\n:**MEDICATIONSTATEMENT**" as MEDSTMTinner #LightGreen {
   * status: //**#completed**//
-  * effectiveDateTime: 2023-08-08
+  * effectiveDateTime: ""2023-08-08T00:00:00Z""
   * dosage: Dosage 
     // actual dose quantity,site,route
 }
@@ -123,7 +126,7 @@ object "August 2023 pain relief given\n:**MEDICATIONSTATEMENT**" as MEDSTMTinner
 object "health assessment responses\n:**QUESTIONNAIRERESPONSE**" as QR1 #SkyBlue {
   * questionnaire: Canonical(SPHA)
   * status: //**#completed**//
-  * authored: 2023-08-08
+  * authored: ""2023-08-08T00:00:00Z""
   * item.*: responses
 }
 
@@ -184,7 +187,7 @@ MR1  -[dashed]u-> "<color:DimGray><size:14>Dosage.doseAndRate" BDOSE
 MR1 -[norank]r-> MED : > medicationReference
 
 MEDSTMT1 "basedOn" -[thickness=3]r-> MR1
-MEDSTMT1 -> MED : > medicationReference
+MEDSTMT1 --> MED : > medicationReference
 
 MEDSTMTinner "basedOn" -[thickness=3]r-> MRinner
 

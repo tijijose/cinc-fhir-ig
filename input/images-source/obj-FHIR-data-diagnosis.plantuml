@@ -59,7 +59,7 @@ package "Condition and diagnosis instances linked from RF CarePlan" as Activitie
     ---
     * status: ""#finished""
     * class: ""#AMB""
-    * serviceType: context of diagnosis SNOMED
+    * **serviceType**: context of diagnosis (SNOMED)
     * period.start: date of diagnosis
     * participant[0]: Reference[Patient] 
     + location[0]: hospital or service name

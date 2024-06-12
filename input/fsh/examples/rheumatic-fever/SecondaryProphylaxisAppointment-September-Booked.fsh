@@ -4,8 +4,8 @@ Description: "Example of a booked patient appointment for RF secondary prophylax
 Usage: #example
 
 * meta.profile = Canonical(Appointment)
-* meta.versionId = "3"
-* meta.lastUpdated = "2024-05-14T05:00:00Z"
+* meta.versionId = "4"
+* meta.lastUpdated = "2024-06-12T07:00:00Z"
 
 * description = "monthly injection September 2023"
 
@@ -15,6 +15,8 @@ Usage: #example
 * end =   "2023-09-05T03:00:00Z"      //  UTC equivalent of a finish time of 3pm NZ Standard Time on September 5th 2023
 
 * status = #booked
+
+* serviceType = $sct#360271000 "Prophylaxis - procedure intent (qualifier value)" 
 
 * participant[0].actor insert NHIPatientRef(SCF7824,[[Madeleine Meringue]])
 * participant[=].status = #accepted

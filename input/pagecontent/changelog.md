@@ -23,6 +23,7 @@
   - [Jones Criteria](Observation-DiagnosisExample-JonesCriteria.html)
   - [Strep evidence](Observation-DiagnosisExample-StrepEvidence.html)
 - The various example `CarePlan`s now illustrate use of the **lifelong secondary prophylaxis** extension and have been revised so that creation adn period dates are UTC `dateTime` values.
+- SP `Appointment`s and `Encounter`s now have `.serviceType` = $sct#360271000 "Prophylaxis"  
 - Madeleine Meringue example patient - changed language code to #en (English) to fix BCP-47 terminology publisher validation problem
 - Pania Punga example patient - changed language code for Maori to #mi to fix BCP-47 terminology publisher validation problem
 
