@@ -5,11 +5,14 @@
 ### Profiles
 
 - Added new profile on Observation resource [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)
-- In the [rheumatic fever CarePlan profile](StructureDefinition-nz-sharedcare-rheumaticfever-careplan.html)
+- [RF CarePlan profile](StructureDefinition-nz-sharedcare-rheumaticfever-careplan.html)
   - Added new boolean extension to indicate lifelong secondary prophylaxis
-- In the [rheumatic Fever Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
+- [RF Condition profile](StructureDefinition-nz-sharedcare-rheumaticfever-condition.html)
   - Added constraint and description on .evidence[] element for linking diagnosis Observations
   - Added descriptions to extension elements to clarify usage
+- [RF medication request profile](/StructureDefinition-nz-sharedcare-rheumaticfever-medicationrequest.html)
+  - Added definitional detail to `dosageInstruction.route` and `.site`
+
 
 ### [Examples](artifacts.html#rheumatic-fever-examples)
 
@@ -32,6 +35,7 @@
 
 - Changed date values to *dateTime* datatype in elements that need to be accurately convert to/from UTC representation
 - Publisher-generated narrative text suppressed in canonical Questionnaires and CareTeam
+- Updated FHIR data models
 
 ---
 

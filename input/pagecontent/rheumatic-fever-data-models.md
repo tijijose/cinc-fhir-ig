@@ -6,7 +6,7 @@ This section provides an overview of the design of the FHIR data representations
 
 <div width="100%">
 <!-- Generated from `input/images-source/FHIR-resource-model-rheumaticfever-pilot.plantuml` -->
-{% include FHIR-resource-model-rheumaticfever-pilot.svg %}
+{% include FHIR-resource-model-rheumaticfever.svg %}
 </div>
 <br clear="all">
 

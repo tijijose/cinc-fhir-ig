@@ -3,7 +3,7 @@
 top to bottom direction
 skinparam dpi 200
 allow_mixing
-scale 800 width
+scale 600 width
 
 skinparam ActivityDiamondBackgroundColor #RoyalBlue
 skinparam ArrowColor #SlateGrey   
