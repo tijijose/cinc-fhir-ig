@@ -1,5 +1,7 @@
 # Changelog
 
+<!-- markdownlint-disable MD024 -->
+
 ## v0.4.2 Rheumatic Fever phase 2 part 2 (June 2024)
 
 ### Profiles
@@ -13,10 +15,9 @@
 - [RF medication request profile](/StructureDefinition-nz-sharedcare-rheumaticfever-medicationrequest.html)
   - Added definitional detail to `dosageInstruction.route` and `.site`
 
-
 ### [Examples](artifacts.html#rheumatic-fever-examples)
 
-- A new Condition example []() illustrates linking Observations via `evidence[].detail` references.
+- A new [Condition with diagnosis evidence](Condition-SevereRfConditionWithDiagnosisEvidence.html) example illustrates linking Observations via `evidence[].detail` references.
 - Examples of enhanced diagnosis linked to a Condition
   - [ECHO RHD assessment](Observation-DiagnosisExample-ECHO.html)
   - [Jones Criteria](Observation-DiagnosisExample-JonesCriteria.html)
@@ -28,7 +29,7 @@
 ### Terminology
 
 - Added a new [ValueSet](ValueSet-rf-observation-diagnosisgroup-code.html) to constrain SNOMED codes used on [Rheumatic Fever Diagnosis Group](StructureDefinition-nz-sharedcare-rheumaticfever-diagnosisgroup.html)s
-- Adjusted **medication frequency codes** //allowed by the [ValueSet](ValueSet-rf-medicationrequest-frequency-code.html) to include every 10|13 weeks. 
+- Adjusted **medication frequency codes** //allowed by the [ValueSet](ValueSet-rf-medicationrequest-frequency-code.html) to include every 10|13 weeks.
 - Improved Terminology Overview page
 
 ### Miscellany
@@ -69,6 +70,7 @@
 #### Shared care provider scenario
 
 These examples have been adjusted to correctly reflect the Taranaki RF SP service as a shared care provider by referencing its HPI org Id **G0M744-C**
+
 - [Madeleine Meringue's care team](CareTeam-SecondaryProphylaxisCareTeam.html)
 - [Booked september appointment](Appointment-SecondaryProphylaxisAppointment-September-Booked.html)
 

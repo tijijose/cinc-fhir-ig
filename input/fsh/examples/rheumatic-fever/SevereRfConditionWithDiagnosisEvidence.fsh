@@ -1,4 +1,4 @@
-Instance: SevereRfConditionWithDiagnosisGroups
+Instance: SevereRfConditionWithDiagnosisEvidence
 InstanceOf: RheumaticFeverCondition
 Usage: #example
 Description: "An example of a severe rheumatic fever Condition with linked evidence as 3 profiled Observation instances."
