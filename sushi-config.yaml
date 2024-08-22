@@ -229,6 +229,8 @@ groups:
     - StructureDefinition/ManaakiNgaTahiServiceRequest
     - StructureDefinition/ServiceRequestActivityDefinition
     - StructureDefinition/nz-sharedcare-communication-person
+    - StructureDefinition/CommunicationRequestFromCPIR
+    - StructureDefinition/CommunicationFromCPIR
     - ActivityDefinition/MeasurementProcedureRequestTemplate
     - PlanDefinition/COVIDMVPCarePlanTemplate
     - OperationDefinition/ActivityDefinition-apply
